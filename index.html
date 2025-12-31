@@ -3,209 +3,480 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>האבות המייסדים של ארה"ב - ביוגרפיה מורחבת ומלאה</title>
+    <title>מורשת ארה"ב: אבות מייסדים, חוקה וציר זמן</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;700&family=Frank+Ruhl+Libre:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700&family=Frank+Ruhl+Libre:wght@700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Assistant', sans-serif; background-color: #020617; color: #e2e8f0; }
+        :root {
+            --primary-blue: #3b82f6;
+            --dark-bg: #020617;
+            --card-bg: #0f172a;
+        }
+        body { 
+            font-family: 'Assistant', sans-serif; 
+            background-color: var(--dark-bg); 
+            color: #e2e8f0; 
+            scroll-behavior: smooth;
+        }
         h1, h2, h3 { font-family: 'Frank Ruhl Libre', serif; }
+        
         .hero-section {
-            background-color: #0f172a;
-            background-image: linear-gradient(rgba(2, 6, 23, 0.8), rgba(2, 6, 23, 0.9)), 
-                              url('https://images.unsplash.com/photo-1501466044931-62695aada8e9?auto=format&fit=crop&q=80&w=1200');
             background-size: cover; background-position: center;
         }
+
         .founder-card {
-            background-color: #0f172a; border: 1px solid #1e293b; border-radius: 1.5rem;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); height: 100%; display: flex; flex-direction: column;
+            background-color: var(--card-bg); 
+            border: 1px solid #1e293b; 
+            border-radius: 1.5rem;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex; flex-direction: column;
+            overflow: hidden;
+            height: 100%;
         }
-        .founder-card:hover { transform: translateY(-10px); border-color: #3b82f6; box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5); }
-        .portrait-container { width: 100%; height: 480px; overflow: hidden; position: relative; }
-        .portrait-img { width: 100%; height: 100%; object-fit: cover; object-position: top; filter: brightness(0.9); }
-        .image-credit { font-size: 0.7rem; color: #94a3b8; padding: 0.4rem 1rem; background-color: #1e293b; font-style: italic; }
-        .bio-info { border-right: 3px solid #3b82f6; padding-right: 1rem; margin-bottom: 1rem; }
+        
+        .founder-card:hover { 
+            transform: translateY(-8px); 
+            border-color: var(--primary-blue); 
+            box-shadow: 0 20px 40px -10px rgba(59, 130, 246, 0.25); 
+        }
+
+        .portrait-container { 
+            width: 100%; 
+            height: 380px; 
+            overflow: hidden; 
+            position: relative; 
+            background-color: #000;
+        }
+
+        .portrait-img { 
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; 
+            object-position: top; 
+            filter: brightness(0.8);
+            transition: transform 0.6s ease;
+        }
+
+        .founder-card:hover .portrait-img {
+            transform: scale(1.05);
+            filter: brightness(1);
+        }
+
+        .quote-box {
+            background: rgba(59, 130, 246, 0.05);
+            border-right: 4px solid var(--primary-blue);
+            padding: 1.25rem;
+            margin-top: 1rem;
+            font-style: italic;
+            border-radius: 0 0.5rem 0.5rem 0;
+            display: none;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .nav-link {
+            padding: 0.5rem 1rem;
+            font-weight: 600;
+            color: #94a3b8;
+            transition: all 0.3s ease;
+            border-bottom: 2px solid transparent;
+        }
+        .nav-link.active {
+            color: var(--primary-blue);
+            border-bottom-color: var(--primary-blue);
+        }
+
+        .constitution-point {
+            background: rgba(30, 41, 59, 0.4);
+            border-right: 4px solid var(--primary-blue);
+            padding: 1.5rem;
+            border-radius: 0 1rem 1rem 0;
+            margin-bottom: 1.5rem;
+            transition: background 0.3s ease;
+        }
+        .constitution-point:hover { background: rgba(30, 41, 59, 0.7); }
+
+        .timeline-dot {
+            position: absolute;
+            right: -10px;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            background: var(--primary-blue);
+            border: 4px solid var(--dark-bg);
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(59, 130, 246, 0.4);
+        }
+
+        .bio-tag {
+            background: rgba(59, 130, 246, 0.1);
+            color: #60a5fa;
+            padding: 0.2rem 0.7rem;
+            border-radius: 999px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            display: inline-block;
+        }
     </style>
 </head>
 <body class="antialiased selection:bg-blue-500 selection:text-white">
 
-    <header class="hero-section text-white py-32 px-6 text-center shadow-2xl">
-        <div class="max-w-4xl mx-auto">
-            <h1 class="text-6xl md:text-8xl font-bold mb-6 tracking-tighter text-blue-100">האבות המייסדים</h1>
-            <p class="text-xl md:text-3xl font-light opacity-80 max-w-3xl mx-auto leading-relaxed">
-                מבט מעמיק על חייהם ופועלם של שמונת המדינאים שהקימו את האומה האמריקאית.
-            </p>
+    <!-- Header / Navigation (Simple & Non-Sticky) -->
+    <header class="bg-slate-950 border-b border-slate-900">
+        <div class="max-w-7xl mx-auto px-6 py-6 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center font-bold text-white">US</div>
+                <div class="text-2xl font-bold text-white tracking-tighter">מורשת ארה"ב</div>
+            </div>
+            <nav class="flex gap-2 md:gap-6">
+                <button onclick="showPage('founders')" id="nav-founders" class="nav-link active">אבות מייסדים</button>
+                <button onclick="showPage('constitution')" id="nav-constitution" class="nav-link">חוקת ארה"ב</button>
+                <button onclick="showPage('timeline')" id="nav-timeline" class="nav-link">ציר זמן</button>
+            </nav>
         </div>
     </header>
 
-    <section class="py-24 px-6 max-w-5xl mx-auto">
-        <div class="bg-slate-900/50 p-12 rounded-3xl border border-slate-800 shadow-2xl backdrop-blur-sm">
-            <h2 class="text-4xl font-bold text-blue-400 mb-8 border-r-8 border-blue-500 pr-6">חשיבותם של האבות המייסדים</h2>
-            <div class="space-y-6 text-xl leading-relaxed text-gray-300">
-                <p>
-                    האבות המייסדים הם קבוצת המנהיגים שהעניקו לעולם את המודל הראשון של דמוקרטיה מודרנית רחבת היקף. חשיבותם אינה מסתכמת רק בניצחון צבאי, אלא ביכולתם להפוך רעיונות מופשטים של נאורות למבנה שלטוני יציב ששורד כבר מעל ל-240 שנה.
-                </p>
-                <p>
-                    הם התמודדו עם אתגרים חסרי תקדים: איחוד שלוש-עשרה מושבות בעלות אינטרסים מנוגדים, פשיטת רגל כלכלית לאחר המלחמה, והצורך למנוע עריצות של אדם אחד מחד ושל "עריצות הרוב" מאידך. שמונת האישים המפורטים כאן היו האדריכלים הראשיים של המערכת הזו.
-                </p>
-            </div>
+    <!-- PAGE: FOUNDING FATHERS -->
+    <div id="page-founders" class="page-content">
+        <div class="hero-section text-white py-32 px-6 text-center" style="background-image: linear-gradient(rgba(2, 6, 23, 0.8), rgba(2, 6, 23, 0.9)), url('https://images.unsplash.com/photo-1501466044931-62695aada8e9?auto=format&fit=crop&q=80&w=1200');">
+            <h1 class="text-6xl md:text-8xl font-bold mb-4 tracking-tighter">האבות המייסדים</h1>
+            <p class="text-xl md:text-2xl font-light text-slate-400 max-w-3xl mx-auto">שמונת האישים המרכזיים שעיצבו את גורלה של האומה האמריקאית.</p>
         </div>
-    </section>
 
-    <main class="py-12 px-6 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-        
-        <article class="founder-card overflow-hidden">
-            <div class="portrait-container">
-                <img src="https://i.postimg.cc/qtfqyBBS/Gilbert-Stuart-Williamstown-Portrait-of-George-Washington.jpg" alt="ג'ורג' וושינגטון" class="portrait-img">
-            </div>
-            <div class="image-credit">צייר: גילברט סטיוארט (Gilbert Stuart)</div>
-            <div class="p-8">
-                <h3 class="text-3xl font-bold text-blue-100 mb-4">ג'ורג' וושינגטון</h3>
-                <div class="bio-info text-sm">
-                    <p><span class="text-blue-400 font-bold">חיים:</span> 1732–1799 (נפטר בגיל 67)</p>
-                    <p><span class="text-blue-400 font-bold">לידה:</span> וסטמורלנד, וירג'יניה</p>
+        <section class="py-12 px-6 bg-slate-900/30">
+            <div class="max-w-7xl mx-auto flex flex-col md:flex-row gap-6 justify-between items-center">
+                <div class="relative w-full md:w-96">
+                    <input type="text" id="founderSearch" placeholder="חפש לפי שם או תפקיד..." class="w-full bg-slate-950 border border-slate-800 rounded-2xl py-4 px-6 pr-12 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all">
+                    <svg class="w-6 h-6 absolute left-4 top-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
                 </div>
-                <div class="text-gray-400 text-lg space-y-4">
-                    <p>וושינגטון היה "הדבק" שאיחד את המושבות. כמפקד הצבא הקונטיננטלי, הוא ניהל מלחמת התשה מבריקה נגד בריטניה למרות מחסור תמידי בציוד ובכוח אדם.</p>
-                    <p>כנשיא הראשון, הוא קבע את הסטנדרטים לכל ממשיכיו. נאום הפרידה המפורסם שלו הזהיר מפני פלגנות פוליטית ומעורבות יתר בענייני מדינות זרות.</p>
+                <div class="flex gap-2">
+                    <button onclick="filterFounders('all')" class="px-5 py-2 rounded-xl bg-blue-600 text-white font-bold">הכל</button>
+                    <button onclick="filterFounders('נשיא')" class="px-5 py-2 rounded-xl bg-slate-800 text-slate-300 font-bold hover:bg-slate-700">נשיאים</button>
                 </div>
             </div>
-        </article>
+        </section>
 
-        <article class="founder-card overflow-hidden">
-            <div class="portrait-container">
-                <img src="https://i.postimg.cc/kVrGKMMf/Gilbert-Stuart-John-Adams-c-1800-1815-NGA-42933.jpg" alt="ג'ון אדמס" class="portrait-img">
-            </div>
-            <div class="image-credit">צייר: גילברט סטיוארט (Gilbert Stuart)</div>
-            <div class="p-8">
-                <h3 class="text-3xl font-bold text-blue-100 mb-4">ג'ון אדמס</h3>
-                <div class="bio-info text-sm">
-                    <p><span class="text-blue-400 font-bold">חיים:</span> 1735–1826 (נפטר בגיל 90)</p>
-                    <p><span class="text-blue-400 font-bold">לידה:</span> בריינטרי, מסצ'וסטס</p>
+        <main id="foundersGrid" class="py-16 px-6 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            
+            <!-- Card 1: Washington -->
+            <article class="founder-card" data-tags="נשיא צבא">
+                <div class="portrait-container">
+                    <img src="https://i.postimg.cc/qtfqyBBS/Gilbert-Stuart-Williamstown-Portrait-of-George-Washington.jpg" alt="ג'ורג' וושינגטון" class="portrait-img">
                 </div>
-                <div class="text-gray-400 text-lg space-y-4">
-                    <p>אדמס היה ה"מנוע" של המהפכה. הוא היה הראשון להציע את וושינגטון כמפקד הצבא והיה התומך הנלהב ביותר בהכרזת העצמאות בקונגרס.</p>
-                    <p>כנשיא השני, הוא מנע מלחמה הרסנית עם צרפת למרות לחצים כבדים. הוא נודע ביושרתו האישית ובמאבקו העיקש לשמירה על חוקת המדינה.</p>
+                <div class="p-8 flex-grow">
+                    <span class="bio-tag">נשיא ראשון</span>
+                    <h3 class="text-3xl font-bold text-blue-100 mb-2">ג'ורג' וושינגטון</h3>
+                    <div class="text-blue-500 text-sm font-bold mb-4">1732–1799 | וירג'יניה</div>
+                    <div class="text-gray-400 leading-relaxed space-y-4">
+                        <p>וושינגטון היה "הדבק" שאיחד את המושבות. כמפקד הצבא הקונטיננטלי, הוא ניהל מלחמת התשה מבריקה נגד בריטניה.</p>
+                        <p>כנשיא הראשון, הוא קבע את הסטנדרטים ווויתר על הכוח לאחר שתי קדנציות, תקדים דמוקרטי היסטורי.</p>
+                    </div>
+                    <button onclick="toggleQuote(this)" class="mt-6 text-blue-400 font-bold underline flex items-center gap-1">ציטוט מפורסם</button>
+                    <div class="quote-box text-slate-300">"היה מנומס לכולם, אך אינטימי עם מעטים."</div>
                 </div>
-            </div>
-        </article>
+            </article>
 
-        <article class="founder-card overflow-hidden">
-            <div class="portrait-container">
-                <img src="https://i.postimg.cc/PLGJYff4/Rembrandt-Peale-Thomas-Jefferson-Google-Art-Project.jpg" alt="תומאס ג'פרסון" class="portrait-img">
-            </div>
-            <div class="image-credit">צייר: רמברנדט פיל (Rembrandt Peale)</div>
-            <div class="p-8">
-                <h3 class="text-3xl font-bold text-blue-100 mb-4">תומאס ג'פרסון</h3>
-                <div class="bio-info text-sm">
-                    <p><span class="text-blue-400 font-bold">חיים:</span> 1743–1826 (נפטר בגיל 83)</p>
-                    <p><span class="text-blue-400 font-bold">לידה:</span> שדוול, וירג'יניה</p>
+            <!-- Card 2: Adams -->
+            <article class="founder-card" data-tags="נשיא כותב">
+                <div class="portrait-container">
+                    <img src="https://i.postimg.cc/kVrGKMMf/Gilbert-Stuart-John-Adams-c-1800-1815-NGA-42933.jpg" alt="ג'ון אדמס" class="portrait-img">
                 </div>
-                <div class="text-gray-400 text-lg space-y-4">
-                    <p>ג'פרסון העניק לאומה את קולה המוסרי. כתיבת הצהרת העצמאות הייתה רגע השיא שלו, בו זיקק את רעיונות החירות לכדי מסמך מהפכני.</p>
-                    <p>כנשיא השלישי, הוא רכש את לואיזיאנה מצרפת ובכך יצר את הבסיס לארה"ב כמעצמה יבשתית. הוא היה איש אשכולות – אדריכל, מדען ופילוסוף.</p>
+                <div class="p-8 flex-grow">
+                    <span class="bio-tag">נשיא שני</span>
+                    <h3 class="text-3xl font-bold text-blue-100 mb-2">ג'ון אדמס</h3>
+                    <div class="text-blue-500 text-sm font-bold mb-4">1735–1826 | מסצ'וסטס</div>
+                    <div class="text-gray-400 leading-relaxed space-y-4">
+                        <p>אדמס היה ה"מנוע" של המהפכה. הוא היה התומך הנלהב ביותר בהכרזת העצמאות בקונגרס ודיפלומט מבריק.</p>
+                        <p>כנשיא השני, הוא מנע מלחמה הרסנית עם צרפת למרות לחצים כבדים ושמר על יציבות החוקה.</p>
+                    </div>
+                    <button onclick="toggleQuote(this)" class="mt-6 text-blue-400 font-bold underline flex items-center gap-1">ציטוט מפורסם</button>
+                    <div class="quote-box text-slate-300">"אני חייב ללמוד פוליטיקה ומלחמה, כדי שבניי יוכלו ללמוד מתמטיקה ופילוסופיה."</div>
                 </div>
-            </div>
-        </article>
+            </article>
 
-        <article class="founder-card overflow-hidden">
-            <div class="portrait-container">
-                <img src="https://i.postimg.cc/WDRzgppS/Joseph-Siffrein-Duplessis-Benjamin-Franklin-Google-Art_Project.jpg" alt="בנימין פרנקלין" class="portrait-img">
-            </div>
-            <div class="image-credit">צייר: ז'וזף סיפרן דופלסי (Joseph-Siffrein Duplessis)</div>
-            <div class="p-8">
-                <h3 class="text-3xl font-bold text-blue-100 mb-4">בנימין פרנקלין</h3>
-                <div class="bio-info text-sm">
-                    <p><span class="text-blue-400 font-bold">חיים:</span> 1706–1790 (נפטר בגיל 84)</p>
-                    <p><span class="text-blue-400 font-bold">לידה:</span> בוסטון, מסצ'וסטס</p>
+            <!-- Card 3: Jefferson -->
+            <article class="founder-card" data-tags="נשיא כותב">
+                <div class="portrait-container">
+                    <img src="https://i.postimg.cc/PLGJYff4/Rembrandt-Peale-Thomas-Jefferson-Google-Art-Project.jpg" alt="תומאס ג'פרסון" class="portrait-img">
                 </div>
-                <div class="text-gray-400 text-lg space-y-4">
-                    <p>פרנקלין היה השגריר החיוני ביותר של המהפכה. ללא הדיפלומטיה המבריקה שלו בפריז, המושבות מעולם לא היו מקבלות את התמיכה הצרפתית.</p>
-                    <p>הוא המציא את כליא הברק והקים את ספריית ההשאלה הראשונה. חוכמת החיים שלו וההומור הפכו אותו לגשר בין המעמדות השונים באמריקה.</p>
+                <div class="p-8 flex-grow">
+                    <span class="bio-tag">נשיא שלישי</span>
+                    <h3 class="text-3xl font-bold text-blue-100 mb-2">תומאס ג'פרסון</h3>
+                    <div class="text-blue-500 text-sm font-bold mb-4">1743–1826 | וירג'יניה</div>
+                    <div class="text-gray-400 leading-relaxed space-y-4">
+                        <p>ג'פרסון העניק לאומה את קולה המוסרי דרך כתיבת הצהרת העצמאות. הוא היה איש אשכולות, אדריכל ומדען.</p>
+                        <p>כנשיא השלישי, הוא רכש את לואיזיאנה מצרפת ובכך יצר את הבסיס לארה"ב כמעצמה יבשתית.</p>
+                    </div>
+                    <button onclick="toggleQuote(this)" class="mt-6 text-blue-400 font-bold underline flex items-center gap-1">ציטוט מפורסם</button>
+                    <div class="quote-box text-slate-300">"אני מעדיף את הסכנות של החירות על פני השקט של העבדות."</div>
                 </div>
-            </div>
-        </article>
+            </article>
 
-        <article class="founder-card overflow-hidden">
-            <div class="portrait-container">
-                <img src="https://i.postimg.cc/bGXrkYYQ/Alexander-Hamilton-portrait-by-John-Trumbull-1806.jpg" alt="אלכסנדר המילטון" class="portrait-img">
-            </div>
-            <div class="image-credit">צייר: ג'ון טרמבול (John Trumbull)</div>
-            <div class="p-8">
-                <h3 class="text-3xl font-bold text-blue-100 mb-4">אלכסנדר המילטון</h3>
-                <div class="bio-info text-sm">
-                    <p><span class="text-blue-400 font-bold">חיים:</span> 1755–1804 (נהרג בדו-קרב בגיל 49)</p>
-                    <p><span class="text-blue-400 font-bold">לידה:</span> האי נביס, הקריביים</p>
+            <!-- Card 4: Franklin -->
+            <article class="founder-card" data-tags="דיפלומט מדען">
+                <div class="portrait-container">
+                    <img src="https://i.postimg.cc/WDRzgppS/Joseph-Siffrein-Duplessis-Benjamin-Franklin-Google-Art_Project.jpg" alt="בנימין פרנקלין" class="portrait-img">
                 </div>
-                <div class="text-gray-400 text-lg space-y-4">
-                    <p>המילטון היה המוח הכלכלי מאחורי המדינה. כשר האוצר הראשון, הוא הקים את המערכת הפיננסית הלאומית ויצר את המטבע האחיד.</p>
-                    <p>הוא היה הכותב העיקרי של "כתבי הפדרליסט", מסמכים המפרשים את החוקה. מותו בדו-קרב קטע קריירה של אחד המוחות החריפים בהיסטוריה.</p>
+                <div class="p-8 flex-grow">
+                    <span class="bio-tag">דיפלומט וממציא</span>
+                    <h3 class="text-3xl font-bold text-blue-100 mb-2">בנימין פרנקלין</h3>
+                    <div class="text-blue-500 text-sm font-bold mb-4">1706–1790 | פנסילבניה</div>
+                    <div class="text-gray-400 leading-relaxed space-y-4">
+                        <p>פרנקלין היה השגריר החיוני ביותר. ללא הדיפלומטיה שלו בפריז, המושבות מעולם לא היו מקבלות את התמיכה הצרפתית.</p>
+                        <p>הוא המציא את כליא הברק והקים את ספריית ההשאלה הראשונה, וסימל את רוח החדשנות האמריקאית.</p>
+                    </div>
+                    <button onclick="toggleQuote(this)" class="mt-6 text-blue-400 font-bold underline flex items-center gap-1">ציטוט מפורסם</button>
+                    <div class="quote-box text-slate-300">"מי שמוותר על חירות חיונית כדי לרכוש ביטחון זמני, אינו ראוי לאף אחד מהם."</div>
                 </div>
-            </div>
-        </article>
+            </article>
 
-        <article class="founder-card overflow-hidden">
-            <div class="portrait-container">
-                <img src="https://i.postimg.cc/t10JWRR3/James-Madison.jpg" alt="ג'יימס מדיסון" class="portrait-img">
-            </div>
-            <div class="image-credit">צייר: ג'ון ונדרלין (John Vanderlyn)</div>
-            <div class="p-8">
-                <h3 class="text-3xl font-bold text-blue-100 mb-4">ג'יימס מדיסון</h3>
-                <div class="bio-info text-sm">
-                    <p><span class="text-blue-400 font-bold">חיים:</span> 1751–1836 (נפטר בגיל 85)</p>
-                    <p><span class="text-blue-400 font-bold">לידה:</span> פורט קונוויי, וירג'יניה</p>
+            <!-- Card 5: Hamilton -->
+            <article class="founder-card" data-tags="כלכלה כותב">
+                <div class="portrait-container">
+                    <img src="https://i.postimg.cc/bGXrkYYQ/Alexander-Hamilton-portrait-by-John-Trumbull-1806.jpg" alt="אלכסנדר המילטון" class="portrait-img">
                 </div>
-                <div class="text-gray-400 text-lg space-y-4">
-                    <p>מדיסון נחשב ל"אבי החוקה". הוא הוביל את וועידת החוקה עם תוכנית וירג'יניה שהיוותה את הבסיס למבנה השלטון הפדרלי.</p>
-                    <p>הוא הבין שהמפתח לחירות הוא הפרדת רשויות מוחלטת. כנשיא הרביעי, הוא הנהיג את המדינה במהלך מלחמת 1812 והבטיח את יציבות החוקה.</p>
+                <div class="p-8 flex-grow">
+                    <span class="bio-tag">שר האוצר הראשון</span>
+                    <h3 class="text-3xl font-bold text-blue-100 mb-2">אלכסנדר המילטון</h3>
+                    <div class="text-blue-500 text-sm font-bold mb-4">1755–1804 | ניו יורק</div>
+                    <div class="text-gray-400 leading-relaxed space-y-4">
+                        <p>המילטון היה המוח הכלכלי. הוא הקים את המערכת הפיננסית הלאומית ויצר את המטבע האחיד כשר האוצר הראשון.</p>
+                        <p>הוא היה הכותב העיקרי של "כתבי הפדרליסט", מסמכים המפרשים את החוקה עד ימינו אלו.</p>
+                    </div>
+                    <button onclick="toggleQuote(this)" class="mt-6 text-blue-400 font-bold underline flex items-center gap-1">ציטוט מפורסם</button>
+                    <div class="quote-box text-slate-300">"אלו שעומדים עבור כלום, ייפלו עבור כל דבר."</div>
                 </div>
-            </div>
-        </article>
+            </article>
 
-        <article class="founder-card overflow-hidden">
-            <div class="portrait-container">
-                <img src="https://i.postimg.cc/zLmvKDDF/Gilbert-Stuart-John-Jay-Google-Art-Project-cropped-2.jpg" alt="ג'ון ג'יי" class="portrait-img">
-            </div>
-            <div class="image-credit">צייר: גילברט סטיוארט (Gilbert Stuart)</div>
-            <div class="p-8">
-                <h3 class="text-3xl font-bold text-blue-100 mb-4">ג'ון ג'יי</h3>
-                <div class="bio-info text-sm">
-                    <p><span class="text-blue-400 font-bold">חיים:</span> 1745–1829 (נפטר בגיל 83)</p>
-                    <p><span class="text-blue-400 font-bold">לידה:</span> ניו יורק סיטי, ניו יורק</p>
+            <!-- Card 6: Madison -->
+            <article class="founder-card" data-tags="נשיא חוקה">
+                <div class="portrait-container">
+                    <img src="https://i.postimg.cc/t10JWRR3/James-Madison.jpg" alt="ג'יימס מדיסון" class="portrait-img">
                 </div>
-                <div class="text-gray-400 text-lg space-y-4">
-                    <p>ג'ון ג'יי היה נשיא בית המשפט העליון הראשון. הוא ניהל את המשא ומתן על "חוזה ג'יי" עם בריטניה, שמנע מלחמה נוספת בשנות המדינה הראשונות.</p>
-                    <p>הוא היה לוחם עקבי נגד העבדות וחתם על חוק השחרור ההדרגתי בניו יורק. תרומתו לביסוס הרשות השופטת הייתה מכרעת ליציבות ארה"ב.</p>
+                <div class="p-8 flex-grow">
+                    <span class="bio-tag">אבי החוקה</span>
+                    <h3 class="text-3xl font-bold text-blue-100 mb-2">ג'יימס מדיסון</h3>
+                    <div class="text-blue-500 text-sm font-bold mb-4">1751–1836 | וירג'יניה</div>
+                    <div class="text-gray-400 leading-relaxed space-y-4">
+                        <p>מדיסון נחשב ל"אבי החוקה". הוא הוביל את וועידת החוקה וניסח את הבסיס למבנה השלטון הפדרלי היציב.</p>
+                        <p>הוא הבין שהמפתח לחירות הוא הפרדת רשויות מוחלטת והיה הכותב המרכזי של מגילת הזכויות.</p>
+                    </div>
+                    <button onclick="toggleQuote(this)" class="mt-6 text-blue-400 font-bold underline flex items-center gap-1">ציטוט מפורסם</button>
+                    <div class="quote-box text-slate-300">"אם בני אדם היו מלאכים, שום ממשלה לא הייתה נחוצה."</div>
                 </div>
-            </div>
-        </article>
+            </article>
 
-        <article class="founder-card overflow-hidden">
-            <div class="portrait-container">
-                <img src="https://i.postimg.cc/9XZrwZ2m/John-Hancock-1770.jpg" alt="ג'ון הנקוק" class="portrait-img">
-            </div>
-            <div class="image-credit">צייר: ג'ון סינגלטון קופלי (John Singleton Copley)</div>
-            <div class="p-8">
-                <h3 class="text-3xl font-bold text-blue-100 mb-4">ג'ון הנקוק</h3>
-                <div class="bio-info text-sm">
-                    <p><span class="text-blue-400 font-bold">חיים:</span> 1737–1793 (נפטר בגיל 56)</p>
-                    <p><span class="text-blue-400 font-bold">לידה:</span> בריינטרי, מסצ'וסטס</p>
+            <!-- Card 7: Jay -->
+            <article class="founder-card" data-tags="משפט דיפלומט">
+                <div class="portrait-container">
+                    <img src="https://i.postimg.cc/zLmvKDDF/Gilbert-Stuart-John-Jay-Google-Art-Project-cropped-2.jpg" alt="ג'ון ג'יי" class="portrait-img">
                 </div>
-                <div class="text-gray-400 text-lg space-y-4">
-                    <p>הנקוק היה נשיא הקונגרס הקונטיננטלי והאדם הראשון שחתם על הכרזת העצמאות. חתימתו הגדולה נועדה להבהיר למלך בריטניה את נחישות המושבות.</p>
-                    <p>הוא היה סוחר עשיר שהשתמש בהונו הרב כדי לממן את המאבק המהפכני. הוא שירת כעשור כמושל מסצ'וסטס והיה דמות מפתח באיחוד המושבות.</p>
+                <div class="p-8 flex-grow">
+                    <span class="bio-tag">נשיא ביהמ"ש העליון</span>
+                    <h3 class="text-3xl font-bold text-blue-100 mb-2">ג'ון ג'יי</h3>
+                    <div class="text-blue-500 text-sm font-bold mb-4">1745–1829 | ניו יורק</div>
+                    <div class="text-gray-400 leading-relaxed space-y-4">
+                        <p>ג'ון ג'יי היה נשיא בית המשפט העליון הראשון. הוא ניהל את המשא ומתן שמנע מלחמה נוספת עם בריטניה בשנים הקריטיות.</p>
+                        <p>הוא היה לוחם עקבי נגד העבדות וחתם על חוק השחרור ההדרגתי בניו יורק כבר בסוף המאה ה-18.</p>
+                    </div>
+                    <button onclick="toggleQuote(this)" class="mt-8 text-blue-500 font-bold underline">ציטוט מפורסם</button>
+                    <div class="quote-box text-gray-300 italic">
+                        "אלו שבבעלותם המדינה צריכים לשלוט בה."
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 8: Hancock -->
+            <article class="founder-card" data-tags="מנהיג">
+                <div class="portrait-container">
+                    <img src="https://i.postimg.cc/9XZrwZ2m/John-Hancock-1770.jpg" alt="ג'ון הנקוק" class="portrait-img">
+                </div>
+                <div class="p-8 flex-grow">
+                    <span class="bio-tag">נשיא הקונגרס</span>
+                    <h3 class="text-3xl font-bold text-blue-100 mb-2">ג'ון הנקוק</h3>
+                    <div class="text-blue-500 text-sm font-bold mb-4">1737–1793 | מסצ'וסטס</div>
+                    <div class="text-gray-400 leading-relaxed space-y-4">
+                        <p>הנקוק היה נשיא הקונגרס הקונטיננטלי והאדם הראשון שחתם על הצהרת העצמאות בחתימה ענקית ומפורסמת.</p>
+                        <p>הוא היה סוחר עשיר שמימן חלק ניכר מהמאבק המהפכני ושירת כעשור כמושל מסצ'וסטס הנערץ.</p>
+                    </div>
+                    <button onclick="toggleQuote(this)" class="mt-8 text-blue-500 font-bold underline">ציטוט מפורסם</button>
+                    <div class="quote-box text-gray-300 italic">
+                        "הנה, עכשיו המלך ג'ורג' יוכל לקרוא את שמי בלי משקפיים!"
+                    </div>
+                </div>
+            </article>
+
+        </main>
+    </div>
+
+    <!-- PAGE: THE CONSTITUTION -->
+    <div id="page-constitution" class="page-content hidden">
+        <div class="hero-section text-white py-32 px-6 text-center" style="background-image: linear-gradient(rgba(2, 6, 23, 0.8), rgba(2, 6, 23, 0.9)), url('https://images.unsplash.com/photo-1589330694653-93d3957297f6?auto=format&fit=crop&q=80&w=1200');">
+            <h1 class="text-6xl md:text-8xl font-bold mb-4 tracking-tighter">חוקת ארה"ב</h1>
+            <p class="text-xl md:text-2xl font-light text-slate-400 max-w-4xl mx-auto italic">"We the People" - המסמך המכונן של הדמוקרטיה המודרנית.</p>
+        </div>
+
+        <section class="py-24 px-6 max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+                <div class="space-y-8">
+                    <h2 class="text-4xl font-bold text-blue-400 border-r-8 border-blue-600 pr-6">היסטוריה ויצירה</h2>
+                    <div class="text-xl leading-relaxed text-slate-300 space-y-6">
+                        <p>במאי 1787 התכנסו 55 נציגים בפילדלפיה. מה שהחל כניסיון לתקן את "תקנוני הקונפדרציה" הפך ללידה של שיטת ממשל חדשה לחלוטין.</p>
+                        <p>הנציגים עבדו בדלתיים סגורות במשך קיץ ארוך וחם, תוך שהם מנהלים ויכוחים סוערים על איזון הכוח בין הממשל המרכזי לזכויות המדינות והפרט.</p>
+                        <p>התוצאה היא החוקה הכתובה הוותיקה ביותר בעולם שעדיין נמצאת בשימוש, הכוללת מנגנוני איזון מורכבים ששורדים מעל מאתיים שנה.</p>
+                    </div>
+                </div>
+                <div class="space-y-6">
+                    <h2 class="text-4xl font-bold text-blue-400 border-r-8 border-blue-600 pr-6">עקרונות היסוד</h2>
+                    <div class="space-y-4">
+                        <div class="constitution-point">
+                            <h4 class="text-xl font-bold text-white mb-2">1. ריבונות העם</h4>
+                            <p class="text-slate-400 leading-relaxed">הממשל שואב את כל סמכותו מהסכמת האזרחים, כפי שמבוטא במילים הפותחות: "אנחנו העם".</p>
+                        </div>
+                        <div class="constitution-point">
+                            <h4 class="text-xl font-bold text-white mb-2">2. הפרדת רשויות</h4>
+                            <p class="text-slate-400 leading-relaxed">חלוקה ברורה לרשות מחוקקת, מבצעת ושופטת, כדי למנוע ריכוז כוח בידי אדם אחד או קבוצה אחת.</p>
+                        </div>
+                        <div class="constitution-point">
+                            <h4 class="text-xl font-bold text-white mb-2">3. בלמים ואיזונים</h4>
+                            <p class="text-slate-400 leading-relaxed">לכל רשות יש כלים חוקיים להגביל את כוחן של הרשויות האחרות (כמו וטו נשיאותי או פסילת חוקים בבימ"ש).</p>
+                        </div>
+                        <div class="constitution-point">
+                            <h4 class="text-xl font-bold text-white mb-2">4. מגילת הזכויות (Bill of Rights)</h4>
+                            <p class="text-slate-400 leading-relaxed">עשרת התיקונים הראשונים המבטיחים חירות דתית, חופש ביטוי, הזכות למשפט הוגן והגנה מפני עריצות.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </article>
+        </section>
+    </div>
 
-    </main>
+    <!-- PAGE: TIMELINE -->
+    <div id="page-timeline" class="page-content hidden">
+        <div class="hero-section text-white py-32 px-6 text-center" style="background-image: linear-gradient(rgba(2, 6, 23, 0.8), rgba(2, 6, 23, 0.9)), url('https://images.unsplash.com/photo-1521120413309-42e7eada0332?auto=format&fit=crop&q=80&w=1200');">
+            <h1 class="text-6xl md:text-8xl font-bold mb-4 tracking-tighter">ציר זמן של חירות</h1>
+            <p class="text-xl md:text-2xl font-light text-slate-400 max-w-4xl mx-auto italic">מרגעי המרד הראשונים ועד לביסוס האומה.</p>
+        </div>
 
-    <footer class="bg-slate-900 text-slate-400 py-20 px-6 text-center mt-20 border-t border-slate-800">
+        <section class="py-24 px-6 max-w-4xl mx-auto">
+            <div class="relative border-r-2 border-slate-800 pr-12 space-y-16">
+                
+                <div class="relative">
+                    <div class="timeline-dot"></div>
+                    <span class="text-blue-500 font-bold text-xl">1773</span>
+                    <h4 class="text-2xl font-bold text-white mt-1">מסיבת התה של בוסטון</h4>
+                    <p class="text-slate-400 mt-2 leading-relaxed">פעולת מחאה נגד המיסוי הבריטי ללא ייצוג, שהיוותה נקודת אל-חזור בדרך למהפכה.</p>
+                </div>
+
+                <div class="relative">
+                    <div class="timeline-dot"></div>
+                    <span class="text-blue-500 font-bold text-xl">1775</span>
+                    <h4 class="text-2xl font-bold text-white mt-1">קרבות לקסינגטון וקונקורד</h4>
+                    <p class="text-slate-400 mt-2 leading-relaxed">היריות הראשונות של מלחמת העצמאות האמריקאית. וושינגטון ממונה למפקד הצבא.</p>
+                </div>
+
+                <div class="relative">
+                    <div class="timeline-dot"></div>
+                    <span class="text-blue-500 font-bold text-xl">1776</span>
+                    <h4 class="text-2xl font-bold text-white mt-1">חתימת הצהרת העצמאות</h4>
+                    <p class="text-slate-400 mt-2 leading-relaxed">56 צירים חתמו על המסמך שניסח תומאס ג'פרסון, המכריז על ניתוק סופי מבריטניה.</p>
+                </div>
+
+                <div class="relative">
+                    <div class="timeline-dot"></div>
+                    <span class="text-blue-500 font-bold text-xl">1783</span>
+                    <h4 class="text-2xl font-bold text-white mt-1">חוזה פריז</h4>
+                    <p class="text-slate-400 mt-2 leading-relaxed">סיום רשמי של המלחמה. בריטניה מכירה בעצמאותן של 13 המושבות.</p>
+                </div>
+
+                <div class="relative">
+                    <div class="timeline-dot"></div>
+                    <span class="text-blue-500 font-bold text-xl">1787</span>
+                    <h4 class="text-2xl font-bold text-white mt-1">וועידת החוקה</h4>
+                    <p class="text-slate-400 mt-2 leading-relaxed">נציגי המדינות מתכנסים בפילדלפיה ומנסחים את מבנה השלטון הפדרלי החדש.</p>
+                </div>
+
+                <div class="relative">
+                    <div class="timeline-dot"></div>
+                    <span class="text-blue-500 font-bold text-xl">1789</span>
+                    <h4 class="text-2xl font-bold text-white mt-1">השבעת וושינגטון</h4>
+                    <p class="text-slate-400 mt-2 leading-relaxed">ג'ורג' וושינגטון מושבע לנשיא הראשון של ארה"ב תחת החוקה החדשה.</p>
+                </div>
+
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 text-slate-500 py-16 px-6 border-t border-slate-900 text-center">
         <div class="max-w-2xl mx-auto">
-            <p class="text-lg mb-4">המורשת של האבות המייסדים ממשיכה להנחות את העולם החופשי.</p>
-            <div class="h-1 w-24 bg-blue-600 mx-auto mb-6"></div>
-            <p class="text-sm opacity-50 italic">המידע מבוסס על מקורות היסטוריים וביוגרפיים רשמיים.</p>
+            <p class="text-lg mb-4 text-slate-300">מורשת האבות המייסדים</p>
+            <p class="text-sm opacity-60 italic mb-8">נבנה עבור חובבי היסטוריה וביוגרפיה.</p>
+            <div class="h-px w-24 bg-blue-900 mx-auto mb-8"></div>
+            <p class="text-xs">© 2025 פרויקט היסטוריה אמריקאית. כל המידע מבוסס על מקורות רשמיים.</p>
         </div>
     </footer>
 
+    <script>
+        // Page Navigation Logic
+        function showPage(pageId) {
+            // Hide all pages
+            document.querySelectorAll('.page-content').forEach(p => p.classList.add('hidden'));
+            // Show selected page
+            document.getElementById('page-' + pageId).classList.remove('hidden');
+            
+            // Update Navigation UI
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+            });
+            document.getElementById('nav-' + pageId).classList.add('active');
+            
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'instant' });
+        }
+
+        // Founders Search & Filter
+        const searchInput = document.getElementById('founderSearch');
+        const cards = document.querySelectorAll('.founder-card');
+
+        searchInput.addEventListener('input', (e) => {
+            const term = e.target.value.trim().toLowerCase();
+            cards.forEach(card => {
+                const text = card.innerText.toLowerCase();
+                card.style.display = text.includes(term) ? 'flex' : 'none';
+            });
+        });
+
+        function filterFounders(tag) {
+            cards.forEach(card => {
+                const tags = card.getAttribute('data-tags');
+                if (tag === 'all' || tags.includes(tag)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Quote Toggler
+        function toggleQuote(btn) {
+            const quoteBox = btn.nextElementSibling;
+            const isVisible = quoteBox.style.display === 'block';
+            
+            if (isVisible) {
+                quoteBox.style.display = 'none';
+                btn.innerText = 'ציטוט מפורסם';
+            } else {
+                quoteBox.style.display = 'block';
+                btn.innerText = 'הסתר ציטוט';
+            }
+        }
+    </script>
 </body>
 </html>
+
