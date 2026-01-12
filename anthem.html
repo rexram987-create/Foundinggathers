@@ -3,23 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ההימנון הלאומי - מורשת ארה"ב</title>
+    <title>ההימנון הלאומי - סיפורו של הדגל זרוע הכוכבים</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700&family=Frank+Ruhl+Libre:wght@700&display=swap" rel="stylesheet">
     <style>
         :root { --primary-blue: #3b82f6; --dark-bg: #020617; --card-bg: #0f172a; }
-        body { font-family: 'Assistant', sans-serif; background-color: var(--dark-bg); color: #e2e8f0; margin: 0; padding: 0; }
+        body { font-family: 'Assistant', sans-serif; background-color: var(--dark-bg); color: #e2e8f0; margin: 0; padding: 0; line-height: 1.6; }
         h1, h2, h3 { font-family: 'Frank Ruhl Libre', serif; }
         .main-header { background-color: #0f172a; border-bottom: 2px solid #1e293b; padding: 2rem 1rem; text-align: center; }
         .nav-link { padding: 0.8rem 1.2rem; font-weight: 700; color: #94a3b8; border-radius: 1rem; background: rgba(30, 41, 59, 0.5); border: 1px solid #1e293b; text-decoration: none; transition: 0.3s; display: inline-block; font-size: 0.9rem; }
         .nav-link.active { color: white; background-color: var(--primary-blue); border-color: var(--primary-blue); }
+        .content-card { background: #0f172a; border: 1px solid #1e293b; border-radius: 1.5rem; padding: 2.5rem; margin-bottom: 2rem; }
+        .lyrics-box { background: rgba(59, 130, 246, 0.05); border-right: 4px solid var(--primary-blue); padding: 1.5rem; font-style: italic; }
     </style>
 </head>
 <body>
 
     <header class="main-header">
         <div class="max-w-7xl mx-auto">
-            <h1 class="text-2xl font-bold text-white mb-6">מורשת ארה"ב</h1>
+            <h1 class="text-3xl font-bold text-white mb-6">מורשת ארה"ב</h1>
             <nav class="flex justify-center gap-2 flex-wrap">
                 <a href="index.html" class="nav-link">אבות מייסדים</a>
                 <a href="flag.html" class="nav-link">הדגל האמריקאי</a>
@@ -30,31 +32,62 @@
 
     <main class="max-w-4xl mx-auto px-6 py-12">
         <div class="text-center mb-10">
-            <h2 class="text-4xl font-bold text-white mb-2">The Star-Spangled Banner</h2>
-            <p class="text-blue-400 font-bold uppercase tracking-widest text-sm italic">כתב היד המקורי</p>
+            <h2 class="text-5xl font-bold text-white mb-4 italic">The Star-Spangled Banner</h2>
+            <p class="text-blue-400 font-bold uppercase tracking-widest">הסיפור מאחורי ההמנון</p>
         </div>
 
-        <div class="bg-[#0f172a] border border-[#1e293b] p-6 md:p-10 rounded-3xl shadow-2xl space-y-8">
-            <div class="text-center">
-                <img src="https://i.postimg.cc/T1vCWBD1/1768232600016.png" alt="כתב היד המקורי של ההימנון" class="mx-auto rounded-xl max-w-full shadow-lg border border-slate-700">
-                <p class="mt-4 text-slate-500 text-sm italic">הטיוטה המקורית בכתב ידו של פרנסיס סקוט קי, 1814</p>
-            </div>
+        <div class="content-card shadow-2xl space-y-8 text-center">
+            <img src="https://i.postimg.cc/T1vCWBD1/1768232600016.png" alt="כתב היד המקורי" class="mx-auto rounded-xl max-w-full shadow-lg border border-slate-700">
+            <p class="text-slate-500 text-sm">כתב היד המקורי של פרנסיס סקוט קי, 1814</p>
             
-            <div class="bg-blue-900/10 p-6 rounded-2xl border border-blue-500/30 text-center">
-                <p class="text-white font-bold mb-4">האזנה לביצוע האינסטרומנטלי</p>
+            <div class="bg-blue-900/10 p-6 rounded-2xl border border-blue-500/30">
+                <p class="text-white font-bold mb-4">האזנה לביצוע האינסטרומנטלי הרשמי</p>
                 <audio controls class="w-full">
                     <source src="https://upload.wikimedia.org/wikipedia/commons/6/65/Star_Spangled_Banner_instrumental.ogg" type="audio/ogg">
                 </audio>
             </div>
+        </div>
 
-            <div class="text-right space-y-4">
-                <h3 class="text-2xl font-bold text-white">סיפורו של ההימנון</h3>
-                <p class="text-slate-300 leading-relaxed">
-                    ב-14 בספטמבר 1814, צפה פרנסיס סקוט קי בהפצצה הבריטית על מצודת מקהנרי. כשראה את דגל הפסים והכוכבים עדיין מתנוסס לאור השחר, הוא כתב את המילים שהפכו לסמל של חוסן ותקווה.
+        <div class="content-card">
+            <h3 class="text-2xl font-bold text-white mb-6 border-b border-blue-500/30 pb-2">הלילה בו נולד ההמנון</h3>
+            <div class="space-y-6 text-slate-300 text-lg">
+                <p>
+                    בספטמבר 1814, בעיצומה של מלחמת 1812 בין ארה"ב לבריטניה, מצא את עצמו עורך הדין והמשורר החובב <strong>פרנסיס סקוט קי</strong> במשימה דיפלומטית רגישה. הוא עלה על ספינה בריטית כדי לשאת ולתת על שחרורו של חבר, רופא אמריקאי שנשבה. 
+                </p>
+                <p>
+                    הבריטים הסכימו לשחרר את השבוי, אך סירבו לאפשר לקי וחבריו לעזוב את האזור באותו לילה, מכיוון שהם עמדו לפתוח במתקפה מכרעת על <strong>מצודת מקהנרי</strong> השומרת על נמל בולטימור. קי נאלץ לצפות מהספינה שלו, ממרחק של כמה קילומטרים, בהפצצה בלתי פוסקת שנמשכה 25 שעות.
+                </p>
+                <p>
+                    במשך כל הלילה הגורלי, השמיים היו מוארים ב"זוהר האדום של הרקטות" ובפצצות מתפוצצות. קי ידע שאם האש תיפסק והדגל האמריקאי יורד, משמעות הדבר היא תבוסה וכניעה של העיר. 
+                </p>
+                <p>
+                    עם עלות השחר של ה-14 בספטמבר, מבעד לעשן ולערפל, הביט קי לעבר המצודה. להפתעתו ולשמחתו, הוא ראה לא את הדגל הבריטי, אלא את "הדגל זרוע הכוכבים" – דגל ענק שנתפר במיוחד כדי שהאויב יוכל לראות אותו מרחוק – כשהוא עדיין מתנוסס בגאון. המחזה המרהיב הזה נתן לו את ההשראה לכתוב על גב של מכתב ישן את המילים שהפכו לימים להמנון הלאומי.
                 </p>
             </div>
         </div>
+
+        <div class="content-card">
+            <h3 class="text-2xl font-bold text-white mb-6 border-b border-blue-500/30 pb-2">מילות השיר (תרגום לעברית)</h3>
+            <div class="lyrics-box text-white text-xl leading-relaxed">
+                אוֹ, אֱמֹר, הֲתוּכַל לִרְאוֹת, בְּאוֹר הַשַּׁחַר הָרִאשׁוֹן,<br>
+                אֶת מָה שֶׁבִּגְאווה בֵּרַכְנוּ בְּדִמְדּוּמֵי הָעֶרֶב הָאַחֲרוֹנים?<br>
+                שֶׁפַּסָּיו הָרְחָבִים וְכוֹכָבָיו הַזּוֹהֲרִים, בַּקְּרָב הַמְסֻכָּן,<br>
+                מֵעַל לַבִּצּוּרִים שֶׁעליהם צָפִינוּ, הִתְנוֹפְפוּ בַּאֲצִילוּת?<br>
+                וְזוֹהַר הָרַקֵטוֹת הָאָדֹם, הַפְּצָצוֹת הַמִּתְפּוֹצְצוֹת בָּאֲוִיר,<br>
+                הוֹכִיחוּ לְאֹרֶךְ הַלַּיְלָה שֶׁדִּגְלֵנוּ עֲדַיִן שָׁם.<br>
+                אוֹ, אֱמֹר, הַאִם הַדֶּגֶל זְרוּעַ הַכּוֹכָבִים עֲדַיִן מִתְנוֹפֵף,<br>
+                מֵעַל אֶרֶץ הַחופֶשׁ וּמֵעַל בֵּיתָם שֶׁל הָאַמִּיצִים?
+            </div>
+            <p class="mt-6 text-slate-500 text-sm italic text-left">
+                * תרגום חופשי לבית הראשון מתוך "The Star-Spangled Banner"
+            </p>
+        </div>
     </main>
+
+    <footer class="bg-slate-950 text-slate-600 py-12 text-center border-t border-slate-900">
+        <p class="text-blue-400 font-bold tracking-widest uppercase mb-4">Liberty & Heritage Project</p>
+        <p class="text-sm px-6">מחקר היסטורי ועיצוב: מורשת ארה"ב | 2026</p>
+    </footer>
 
 </body>
 </html>
