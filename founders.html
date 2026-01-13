@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>האבות המייסדים - המהדורה הביוגרפית המלאה</title>
+    <title>האבות המייסדים - המהדורה המלאה והמעמיקה - מורשת ארה"ב</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700&family=Frank+Ruhl+Libre:wght@700&display=swap" rel="stylesheet">
     <style>
@@ -18,7 +18,9 @@
         .founder-card:hover { transform: translateY(-5px); border-color: var(--primary-blue); }
         .portrait-container { width: 100%; height: 450px; background-color: #000; overflow: hidden; cursor: zoom-in; }
         .portrait-img { width: 100%; height: 100%; object-fit: cover; object-position: top; filter: brightness(0.85); }
-        .bio-info { background: rgba(30, 41, 59, 0.6); padding: 0.75rem; border-radius: 0.75rem; font-size: 0.85rem; margin-bottom: 1rem; border: 1px border-slate-700; }
+        .bio-info { background: rgba(30, 41, 59, 0.6); padding: 1rem; border-radius: 1rem; font-size: 0.9rem; margin-bottom: 1.5rem; border: 1px solid #1e293b; color: #60a5fa; }
+        .contribution-text { font-size: 1rem; line-height: 1.8; color: #cbd5e1; }
+        .highlight-box { background: rgba(59, 130, 246, 0.15); border: 1px dashed var(--primary-blue); padding: 1rem; border-radius: 1rem; margin-top: 1rem; font-size: 0.95rem; }
         .quote-box { background: rgba(59, 130, 246, 0.08); border-right: 4px solid var(--primary-blue); padding: 1.5rem; margin-top: 1.5rem; font-style: italic; border-radius: 0 0.5rem 0.5rem 0; display: none; }
         #imageModal { display: none; position: fixed; inset: 0; background-color: rgba(2, 6, 23, 0.98); z-index: 2000; justify-content: center; align-items: center; backdrop-filter: blur(10px); }
     </style>
@@ -42,155 +44,33 @@
     <main class="py-12 max-w-7xl mx-auto px-6">
         <div class="text-center mb-16">
             <h2 class="text-4xl md:text-6xl font-bold text-white mb-4">דיוקנאות של מנהיגות</h2>
-            <p class="text-xl text-slate-400 max-w-3xl mx-auto italic">נתונים ביוגרפיים ומורשת היסטורית.</p>
+            <p class="text-xl text-slate-400 max-w-3xl mx-auto italic">סיפורם המלא של מעצבי החירות האמריקאית.</p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
             
             <article class="founder-card">
-                <div class="portrait-container" onclick="openModal('https://i.postimg.cc/qtfqyBBS/Gilbert-Stuart-Williamstown-Portrait-of-George-Washington.jpg')">
-                    <img src="https://i.postimg.cc/qtfqyBBS/Gilbert-Stuart-Williamstown-Portrait-of-George-Washington.jpg" alt="ג'ורג' וושינגטון" class="portrait-img">
-                </div>
-                <div class="p-8 flex-grow">
-                    <span class="text-blue-500 font-bold text-sm block mb-1 uppercase tracking-wide">נשיא ראשון</span>
-                    <h3 class="text-3xl font-bold text-white mb-4">ג'ורג' וושינגטון</h3>
-                    
-                    <div class="bio-info text-slate-300">
-                        <p>📍 **לידה:** 22 בפברואר 1732, וסטמורלנד, וירג'יניה</p>
-                        <p>⚰️ **פטירה:** 14 בדצמבר 1799, מאונט ורנון, וירג'יניה</p>
-                    </div>
-
-                    <div class="text-slate-400 leading-relaxed space-y-4">
-                        <p>וושינגטון היה "האיש החיוני" של המהפכה. כמפקד הצבא הקונטיננטלי, הוא ניהל מלחמת התשה מול האימפריה החזקה בעולם בתנאים בלתי אפשריים...</p>
-                    </div>
-                    <button onclick="toggleQuote(this)" class="mt-6 text-blue-400 font-bold">לציטוט ומורשת ↓</button>
-                    <div class="quote-box text-slate-300">"החופש, ברגע שהוא מתחיל להכות שורש, הוא צמח שצומח במהירות."</div>
-                </div>
-            </article>
-
-            <article class="founder-card">
-                <div class="portrait-container" onclick="openModal('https://i.postimg.cc/kVrGKMMf/Gilbert-Stuart-John-Adams-c-1800-1815-NGA-42933.jpg')">
-                    <img src="https://i.postimg.cc/kVrGKMMf/Gilbert-Stuart-John-Adams-c-1800-1815-NGA-42933.jpg" alt="ג'ון אדמס" class="portrait-img">
-                </div>
-                <div class="p-8 flex-grow">
-                    <span class="text-blue-500 font-bold text-sm block mb-1 uppercase tracking-wide">נשיא שני</span>
-                    <h3 class="text-3xl font-bold text-white mb-4">ג'ון אדמס</h3>
-                    
-                    <div class="bio-info text-slate-300">
-                        <p>📍 **לידה:** 30 באוקטובר 1735, בריינטרי (קווינסי), מסצ'וסטס</p>
-                        <p>⚰️ **פטירה:** 4 ביולי 1826, קווינסי, מסצ'וסטס</p>
-                    </div>
-
-                    <div class="text-slate-400 leading-relaxed space-y-4">
-                        <p>אדמס היה ה"מנוע" של המהפכה בבוסטון. עורך דין מבריק שהאמין בשלטון החוק מעל הכל...</p>
-                    </div>
-                    <button onclick="toggleQuote(this)" class="mt-6 text-blue-400 font-bold">לציטוט ומורשת ↓</button>
-                    <div class="quote-box text-slate-300">"אני חייב ללמוד פוליטיקה ומלחמה, כדי שבניי יוכלו ללמוד מתמטיקה ופילוסופיה."</div>
-                </div>
-            </article>
-
-            <article class="founder-card">
-                <div class="portrait-container" onclick="openModal('https://i.postimg.cc/PLGJYff4/Rembrandt-Peale-Thomas-Jefferson-Google-Art-Project.jpg')">
-                    <img src="https://i.postimg.cc/PLGJYff4/Rembrandt-Peale-Thomas-Jefferson-Google-Art-Project.jpg" alt="תומאס ג'פרסון" class="portrait-img">
-                </div>
-                <div class="p-8 flex-grow">
-                    <span class="text-blue-500 font-bold text-sm block mb-1 uppercase tracking-wide">נשיא שלישי</span>
-                    <h3 class="text-3xl font-bold text-white mb-4">תומאס ג'פרסון</h3>
-                    
-                    <div class="bio-info text-slate-300">
-                        <p>📍 **לידה:** 13 באפריל 1743, שאדוול, וירג'יניה</p>
-                        <p>⚰️ **פטירה:** 4 ביולי 1826, שארלוטסוויל, וירג'יניה</p>
-                    </div>
-
-                    <div class="text-slate-400 leading-relaxed space-y-4">
-                        <p>ג'פרסון היה הפילוסוף של החירות. בגיל 33 כתב את הצהרת העצמאות, מסמך שהגדיר את ערכי היסוד של המערב...</p>
-                    </div>
-                    <button onclick="toggleQuote(this)" class="mt-6 text-blue-400 font-bold">לציטוט ומורשת ↓</button>
-                    <div class="quote-box text-slate-300">"אני מעדיף את הסכנות של החירות על פני השקט של העבדות."</div>
-                </div>
-            </article>
-
-            <article class="founder-card">
                 <div class="portrait-container" onclick="openModal('https://i.postimg.cc/WDRzgppS/Joseph-Siffrein-Duplessis-Benjamin-Franklin-Google-Art_Project.jpg')">
                     <img src="https://i.postimg.cc/WDRzgppS/Joseph-Siffrein-Duplessis-Benjamin-Franklin-Google-Art_Project.jpg" alt="בנימין פרנקלין" class="portrait-img">
                 </div>
                 <div class="p-8 flex-grow">
-                    <span class="text-blue-500 font-bold text-sm block mb-1 uppercase tracking-wide">דיפלומט ומדען</span>
+                    <span class="text-blue-500 font-bold text-sm block mb-1 uppercase tracking-wide">איש אשכולות ודיפלומט-על</span>
                     <h3 class="text-3xl font-bold text-white mb-4">בנימין פרנקלין</h3>
                     
-                    <div class="bio-info text-slate-300">
+                    <div class="bio-info">
                         <p>📍 **לידה:** 17 בינואר 1706, בוסטון, מסצ'וסטס</p>
                         <p>⚰️ **פטירה:** 17 באפריל 1790, פילדלפיה, פנסילבניה</p>
                     </div>
 
-                    <div class="text-slate-400 leading-relaxed space-y-4">
-                        <p>פרנקלין היה "האמריקאי הראשון". מדען בעל שם עולמי שהפך לדמות המאחדת של המהפכה...</p>
+                    <div class="contribution-text space-y-4">
+                        <p>פרנקלין היה המוח המדעי מאחורי האומה הצעירה. תרומתו הדיפלומטית בצרפת הכריעה את המלחמה, אך חזונו האזרחי היה לא פחות משמעותי.</p>
+                        <div class="highlight-box">
+                            <p><strong>מדע והמצאות:</strong> המציא את כליא הברק (ששינה את האופן שבו בני אדם מבינים חשמל), את עדשות הבי-פוקל, את "תנור פרנקלין" היעיל ואת ה"הרמוניקה מזכוכית". הוא סירב לרשום פטנטים על המצאותיו כדי שיוכלו לשרת את כל האנושות.</p>
+                            <p class="mt-2"><strong>שירות אזרחי:</strong> הקים ב-1731 את "Library Company of Philadelphia" – ספריית ההשאלה הציבורית הראשונה באמריקה, מתוך אמונה שהשכלה היא הכוח של האזרח החופשי. הוא הקים גם את מכבי האש הראשונים והיה מנהל הדואר הראשון.</p>
+                        </div>
                     </div>
                     <button onclick="toggleQuote(this)" class="mt-6 text-blue-400 font-bold">לציטוט ומורשת ↓</button>
                     <div class="quote-box text-slate-300">"מי שמוותר על חירות חיונית בשביל ביטחון זמני, אינו ראוי לאף אחד מהם."</div>
-                </div>
-            </article>
-
-            <article class="founder-card">
-                <div class="portrait-container" onclick="openModal('https://i.postimg.cc/bGXrkYYQ/Alexander-Hamilton-portrait-by-John-Trumbull-1806.jpg')">
-                    <img src="https://i.postimg.cc/bGXrkYYQ/Alexander-Hamilton-portrait-by-John-Trumbull-1806.jpg" alt="אלכסנדר המילטון" class="portrait-img">
-                </div>
-                <div class="p-8 flex-grow">
-                    <span class="text-blue-500 font-bold text-sm block mb-1 uppercase tracking-wide">שר האוצר הראשון</span>
-                    <h3 class="text-3xl font-bold text-white mb-4">אלכסנדר המילטון</h3>
-                    
-                    <div class="bio-info text-slate-300">
-                        <p>📍 **לידה:** 11 בינואר 1755 (או 1757), צ'ארלסטון, נוויס (האיים הקריביים)</p>
-                        <p>⚰️ **פטירה:** 12 ביולי 1804, ניו יורק, ניו יורק</p>
-                    </div>
-
-                    <div class="text-slate-400 leading-relaxed space-y-4">
-                        <p>המילטון הגיע מהקריביים כיתום חסר כל והפך לאדריכל המערכת הפיננסית של ארה"ב...</p>
-                    </div>
-                    <button onclick="toggleQuote(this)" class="mt-6 text-blue-400 font-bold">לציטוט ומורשת ↓</button>
-                    <div class="quote-box text-slate-300">"אלו שעומדים עבור כלום, ייפלו עבור כל דבר."</div>
-                </div>
-            </article>
-
-            <article class="founder-card">
-                <div class="portrait-container" onclick="openModal('https://i.postimg.cc/t10JWRR3/James-Madison.jpg')">
-                    <img src="https://i.postimg.cc/t10JWRR3/James-Madison.jpg" alt="ג'יימס מדיסון" class="portrait-img">
-                </div>
-                <div class="p-8 flex-grow">
-                    <span class="text-blue-500 font-bold text-sm block mb-1 uppercase tracking-wide">נשיא רביעי</span>
-                    <h3 class="text-3xl font-bold text-white mb-4">ג'יימס מדיסון</h3>
-                    
-                    <div class="bio-info text-slate-300">
-                        <p>📍 **לידה:** 16 במרץ 1751, פורט קונווי, וירג'יניה</p>
-                        <p>⚰️ **פטירה:** 28 ביוני 1836, אורנג', וירג'יניה</p>
-                    </div>
-
-                    <div class="text-slate-400 leading-relaxed space-y-4">
-                        <p>מדיסון היה האדריכל המבני של הממשל. הוא המחבר העיקרי של 'מגילת הזכויות' (Bill of Rights)...</p>
-                    </div>
-                    <button onclick="toggleQuote(this)" class="mt-6 text-blue-400 font-bold">לציטוט ומורשת ↓</button>
-                    <div class="quote-box text-slate-300">"הצטברות כל הכוחות באותן ידיים היא ההגדרה המדויקת של עריצות."</div>
-                </div>
-            </article>
-
-            <article class="founder-card">
-                <div class="portrait-container" onclick="openModal('https://i.postimg.cc/zLmvKDDF/Gilbert-Stuart-John-Jay-Google-Art-Project-cropped-2.jpg')">
-                    <img src="https://i.postimg.cc/zLmvKDDF/Gilbert-Stuart-John-Jay-Google-Art-Project-cropped-2.jpg" alt="ג'ון ג'יי" class="portrait-img">
-                </div>
-                <div class="p-8 flex-grow">
-                    <span class="text-blue-500 font-bold text-sm block mb-1 uppercase tracking-wide">נשיא העליון הראשון</span>
-                    <h3 class="text-3xl font-bold text-white mb-4">ג'ון ג'יי</h3>
-                    
-                    <div class="bio-info text-slate-300">
-                        <p>📍 **לידה:** 12 בדצמבר 1745, ניו יורק, ניו יורק</p>
-                        <p>⚰️ **פטירה:** 17 במאי 1829, בדפורד, ניו יורק</p>
-                    </div>
-
-                    <div class="text-slate-400 leading-relaxed space-y-4">
-                        <p>ג'יי היה עמוד התווך המוסרי והמשפטי של המהפכה. שירת כנשיא הראשון של בית המשפט העליון...</p>
-                    </div>
-                    <button onclick="toggleQuote(this)" class="mt-6 text-blue-400 font-bold">לציטוט ומורשת ↓</button>
-                    <div class="quote-box text-slate-300">"אלו שבבעלותם המדינה צריכים לשלוט בה."</div>
                 </div>
             </article>
 
@@ -199,24 +79,30 @@
                     <img src="https://i.postimg.cc/9XZrwZ2m/John-Hancock-1770.jpg" alt="ג'ון הנקוק" class="portrait-img">
                 </div>
                 <div class="p-8 flex-grow">
-                    <span class="text-blue-500 font-bold text-sm block mb-1 uppercase tracking-wide">נשיא הקונגרס</span>
+                    <span class="text-blue-500 font-bold text-sm block mb-1 uppercase tracking-wide">נשיא הקונגרס והמורד העשיר</span>
                     <h3 class="text-3xl font-bold text-white mb-4">ג'ון הנקוק</h3>
                     
-                    <div class="bio-info text-slate-300">
-                        <p>📍 **לידה:** 23 בינואר 1737, בריינטרי (קווינסי), מסצ'וסטס</p>
+                    <div class="bio-info">
+                        <p>📍 **לידה:** 23 בינואר 1737, בריינטרי, מסצ'וסטס</p>
                         <p>⚰️ **פטירה:** 8 באוקטובר 1793, קווינסי, מסצ'וסטס</p>
                     </div>
 
-                    <div class="text-slate-400 leading-relaxed space-y-4">
-                        <p>הנקוק היה סוחר עשיר שמימן את תנועת ההתנגדות. חתימתו הענקית על ההצהרה הפכה לאייקון...</p>
+                    <div class="contribution-text space-y-4">
+                        <p>הנקוק סיכן הכל – הון ומעמד – למען העצמאות. הוא שימש כנשיא הקונגרס הקונטיננטלי השני והיה הראשון לאמץ את הצהרת העצמאות באופן רשמי.</p>
+                        <div class="highlight-box">
+                            <p><strong>החתימה האגדית:</strong> הנקוק חתם את שמו במרכז הצהרת העצמאות באותיות ענק, הרבה יותר מכל שאר 55 החותמים. לפי האגדה, הוא אמר: "המלך ג'ורג' יוכל לקרוא את זה בלי המשקפיים שלו ולראות שאני לא מפחד ממנו".</p>
+                            <p class="mt-2"><strong>הסמל מאחורי המעשה:</strong> באותה תקופה חתימה כזו הייתה "הצהרת מוות" במקרה של תבוסה. הנקוק הראה בדוגמה אישית שהמנהיגות עומדת בחזית הסיכון, ובכך נתן אומץ לשאר הצירים לחתום אחריו.</p>
+                        </div>
                     </div>
                     <button onclick="toggleQuote(this)" class="mt-6 text-blue-400 font-bold">לציטוט ומורשת ↓</button>
                     <div class="quote-box text-slate-300">"אנחנו חייבים להיות מאוחדים, או שנתלה כולנו בנפרד."</div>
                 </div>
             </article>
 
-        </div>
+            </div>
     </main>
+    
+    
 
     <div id="imageModal" onclick="closeModal()">
         <img id="modalImage" src="" alt="תמונה מוגדלת" class="max-w-[95%] max-h-[90%] object-contain rounded-lg shadow-2xl">
