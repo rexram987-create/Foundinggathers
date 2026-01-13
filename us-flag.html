@@ -14,16 +14,10 @@
         .nav-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin-top: 1.5rem; }
         .nav-link { padding: 0.8rem 1.5rem; font-weight: 700; color: #94a3b8; border-radius: 1rem; background: rgba(30, 41, 59, 0.5); border: 1px solid #1e293b; text-decoration: none; transition: 0.3s; }
         .nav-link:hover, .nav-link.active { color: white; background-color: var(--primary-blue); box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3); }
-        
         .info-section { background: var(--card-bg); border: 1px solid #1e293b; padding: 3rem; border-radius: 2rem; margin-bottom: 4rem; }
         .symbolism-box { background: rgba(30, 41, 59, 0.4); border-right: 6px solid var(--primary-blue); padding: 2rem; border-radius: 0 1.5rem 1.5rem 0; margin-bottom: 2rem; }
-        .flag-color-red { color: #ef4444; font-weight: 800; }
-        .flag-color-white { color: #ffffff; font-weight: 800; }
-        .flag-color-blue { color: #3b82f6; font-weight: 800; }
-        
-        .hero-flag { background: linear-gradient(rgba(2, 6, 23, 0.7), rgba(2, 6, 23, 0.7)), url('https://images.unsplash.com/photo-1508669232496-137b159c1cdb?q=80&w=2000&auto=format&fit=crop'); background-size: cover; background-position: center; padding: 120px 20px; text-align: center; border-bottom: 1px solid #1e293b; }
-        /* שיניתי את המרווח העליון כדי שיתאים למיקום החדש */
-        .image-container { background: white; padding: 3rem; border-radius: 3.5rem; margin: 0 0 5rem 0; text-align: center; box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.6); color: #0f172a; }
+        .hero-flag { background: linear-gradient(rgba(2, 6, 23, 0.7), rgba(2, 6, 23, 0.7)), url('https://i.postimg.cc/MK0CQZBC/1767162611148.png'); background-size: cover; background-position: center; padding: 80px 20px; text-align: center; border-bottom: 1px solid #1e293b; }
+        .image-container { background: white; padding: 2rem; border-radius: 2.5rem; margin: 0 auto 5rem auto; text-align: center; max-width: 900px; box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.6); }
     </style>
 </head>
 <body class="antialiased">
@@ -31,7 +25,7 @@
     <header class="main-header">
         <div class="max-w-7xl mx-auto">
             <div class="flex justify-center items-center gap-4 mb-2">
-                <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center font-bold text-white text-lg shadow-lg">US</div>
+                <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center font-bold text-white text-lg">US</div>
                 <h1 class="text-3xl md:text-4xl font-bold text-white tracking-tight">מורשת ארה"ב</h1>
             </div>
             <nav class="nav-container">
@@ -48,83 +42,55 @@
     <section class="hero-flag">
         <div class="max-w-4xl mx-auto">
             <h2 class="text-5xl md:text-7xl font-bold text-white mb-6 tracking-tighter">הפסים והכוכבים</h2>
-            <p class="text-2xl text-slate-300 italic font-semibold max-w-2xl mx-auto leading-relaxed">Old Glory – סמל של חירות, הקרבה ותקווה לאומה שלמה.</p>
+            <p class="text-2xl text-slate-300 italic font-semibold leading-relaxed">Old Glory – סמל של חירות, הקרבה ותקווה.</p>
         </div>
     </section>
 
-    <main class="max-w-6xl mx-auto py-20 px-6">
+    <main class="max-w-6xl mx-auto py-12 px-6">
 
         <div class="image-container">
-            <h4 class="text-3xl font-bold text-slate-800 mb-8 underline underline-offset-8 decoration-blue-500">דגל ארצות הברית הנוכחי</h4>
-            <div class="max-w-4xl mx-auto border-4 border-slate-200 rounded-2xl overflow-hidden shadow-2xl">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Flag_of_the_United_States.svg/1200px-Flag_of_the_United_States.svg.png" alt="דגל ארה"ב 50 כוכבים" class="w-full h-auto">
-            </div>
-            <p class="text-slate-500 mt-8 text-xl italic font-medium">הגרסה הרשמית בעלת 50 הכוכבים (מאז ה-4 ביולי, 1960).</p>
+            <img src="https://i.postimg.cc/g2pY7S4G/Flag-of-the-United-States.png" alt="דגל ארצות הברית" class="w-full h-auto rounded-lg shadow-md">
+            <p class="text-slate-500 mt-4 text-lg italic font-medium">דגל 50 הכוכבים הרשמי של ארצות הברית</p>
         </div>
 
         <div class="info-section">
             <h3 class="text-3xl font-bold text-white mb-8 underline decoration-blue-600 underline-offset-8">היסטוריה: מ"צבעי היבשת" ל-50 כוכבים</h3>
-            <div class="space-y-6 text-lg text-slate-300 text-justify">
-                <p>
-                    הדגל האמריקאי הראשון, הידוע בשם "Grand Union Flag" (1775), שיקף את המורכבות של ראשית המהפכה. הוא כלל 13 פסים אך בפינתו עדיין הופיע ה"יוניון ג'ק" הבריטי. רק ב-14 ביוני 1777, הקונגרס הקונטיננטלי קיבל החלטה רשמית: "הדגל יהיה עשוי משלושה עשר פסים, אדום ולבן לסירוגין; והאיחוד יהיה שלושה עשר כוכבים, לבנים בשדה כחול, המייצגים קונסטלציה חדשה".
-                </p>
-                <p>
-                    המסורת העממית מספרת על <strong>בטסי רוס</strong>, תופרת מפילדלפיה, שעיצבה את הדגל לבקשת ג'ורג' וושינגטון. למרות שהסיפור שנוי במחלוקת בקרב היסטוריונים המייחסים את העיצוב לפרנסיס הופקינסון, דמותה של רוס הפכה לחלק בלתי נפרד מהמיתולוגיה הלאומית. הדגל השתנה 27 פעמים לאורך ההיסטוריה עם הצטרפות מדינות חדשות. הגרסה הנוכחית אומצה ב-1960.
-                </p>
+            <div class="space-y-6 text-lg text-slate-300">
+                <p>הדגל האמריקאי הראשון (1775) כלל 13 פסים אך בפינתו עדיין הופיע ה"יוניון ג'ק" הבריטי. ב-14 ביוני 1777, הקונגרס אימץ את ההחלטה המפורסמת על דגל של 13 פסים ו-13 כוכבים המייצגים "קונסטלציה חדשה".</p>
+                <p>המסורת מייחסת את תפירת הדגל הראשון ל<strong>בטסי רוס</strong> לבקשת ג'ורג' וושינגטון. הדגל הנוכחי, עם 50 כוכבים, אומץ ב-1960 לאחר הצטרפות הוואי והוא הגרסה ששרדה הכי הרבה זמן בהיסטוריה האמריקאית.</p>
             </div>
         </div>
 
-        <h3 class="text-4xl font-bold text-white mb-12 text-center">ניתוח סמליות ומרכיבים</h3>
-        
         <div class="space-y-8 mb-20">
             <div class="symbolism-box">
-                <h4 class="text-2xl font-bold text-white mb-4">13 הפסים המקוריים</h4>
-                <p class="text-slate-300 text-lg">שבעה פסים אדומים וששה לבנים מייצגים את 13 המושבות המקוריות שהכריזו על עצמאותן ב-1776. הפסים הם תזכורת נצחית לשורשי האומה ולמאבק הראשוני לחירות.</p>
+                <h4 class="text-2xl font-bold text-white mb-4">13 הפסים והכוכבים</h4>
+                <p class="text-slate-300 text-lg">13 הפסים מייצגים את המושבות המקוריות שמרדו בבריטניה. 50 הכוכבים מייצגים את 50 המדינות המרכיבות את האיחוד כיום.</p>
             </div>
 
             <div class="symbolism-box">
-                <h4 class="text-2xl font-bold text-white mb-4">50 הכוכבים (The Union)</h4>
-                <p class="text-slate-300 text-lg">כל כוכב חמישה-קודקודים מייצג מדינה אחת באיחוד. השדה הכחול שעליו הם מונחים מייצג את האיחוד עצמו – גוף פוליטי אחד שנוצר מתוך גיוון של מדינות נפרדות.</p>
-            </div>
-
-            <div class="symbolism-box">
-                <h4 class="text-2xl font-bold text-white mb-4">משמעות הצבעים הרשמית</h4>
-                <p class="text-slate-300 text-lg mb-6">צבעי הדגל אינם מקריים; הם נבחרו כדי לשקף את הערכים עליהם הוקמה הרפובליקה:</p>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div class="text-center p-4 bg-slate-800/50 rounded-xl">
-                        <span class="flag-color-red text-3xl block mb-2">אדום</span>
-                        <p class="text-sm">גבורה, אומץ לב ועמידה איתנה בפני קשיים (Valor & Hardiness).</p>
-                    </div>
-                    <div class="text-center p-4 bg-slate-800/50 rounded-xl">
-                        <span class="flag-color-white text-3xl block mb-2">לבן</span>
-                        <p class="text-sm">טוהר, תמימות וערכים מוסריים (Purity & Innocence).</p>
-                    </div>
-                    <div class="text-center p-4 bg-slate-800/50 rounded-xl">
-                        <span class="flag-color-blue text-3xl block mb-2">כחול</span>
-                        <p class="text-sm">ערנות, התמדה וצדק (Vigilance, Perseverance & Justice).</p>
-                    </div>
-                </div>
+                <h4 class="text-2xl font-bold text-white mb-4">משמעות הצבעים</h4>
+                <ul class="space-y-4 text-lg">
+                    <li><strong class="text-red-500">אדום:</strong> גבורה ואומץ לב.</li>
+                    <li><strong class="text-white">לבן:</strong> טוהר ותמימות.</li>
+                    <li><strong class="text-blue-500">כחול:</strong> ערנות, התמדה וצדק.</li>
+                </ul>
             </div>
         </div>
 
         <div class="info-section">
-            <h3 class="text-3xl font-bold text-white mb-8">חוקי הדגל (The Flag Code)</h3>
-            <p class="text-lg text-slate-300 mb-6">
-                הטיפול בדגל מוסדר תחת סדרת כללים רשמית המבטאת כבוד לסמל הלאומי. אלו הכללים החשובים ביותר:
-            </p>
+            <h3 class="text-3xl font-bold text-white mb-8">קוד הדגל (Flag Code)</h3>
             <ul class="list-disc list-inside text-slate-300 space-y-4 text-lg">
-                <li><strong>תאורה:</strong> הדגל יוצג רק מזריחה עד שקיעה, אלא אם הוא מואר בתאורה ייעודית במהלך הלילה.</li>
-                <li><strong>איסור מגע:</strong> הדגל לעולם לא ייגע באדמה, במים, ברצפה או בכל חפץ שמתחתיו.</li>
-                <li><strong>חצי התורן:</strong> סימן לאבל לאומי. יש להניף את הדגל לראש התורן לרגע ואז להורידו למחצית הגובה.</li>
-                <li><strong>פרישה בכבוד:</strong> דגל שאינו ראוי עוד לשימוש יושמד בצורה מכובדת, בדרך כלל על ידי שריפה טקסית שקטה.</li>
+                <li>הדגל לעולם לא ייגע באדמה או ברצפה.</li>
+                <li>בלילה, הדגל חייב להיות מואר בתאורה ייעודית.</li>
+                <li>דגל שאינו ראוי לשימוש יושמד בצורה מכובדת (בדרך כלל בשריפה טקסית).</li>
             </ul>
         </div>
 
     </main>
 
     <footer class="bg-slate-950 text-slate-600 py-16 px-6 text-center border-t border-slate-900 mt-20">
-        <p class="text-blue-400 font-bold tracking-widest uppercase mb-4">United Heritage Project</p>
-        <p class="text-sm">כל הזכויות שמורות © 2026 | מבוסס על מסמכי הקונגרס וקוד הדגל הפדרלי.</p>
+        <p class="text-blue-400 font-bold tracking-widest uppercase mb-4">US Heritage Project</p>
+        <p class="text-sm">כל הזכויות שמורות © 2026</p>
     </footer>
 
 </body>
