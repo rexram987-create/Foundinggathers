@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ציר זמן היסטורי: הדרך לחירות - מורשת ארה"ב</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700&family=Frank+Ruhl+Libre:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary-blue: #3b82f6; --dark-bg: #020617; --card-bg: #0f172a; }
+        body { font-family: 'Assistant', sans-serif; background-color: var(--dark-bg); color: #e2e8f0; margin: 0; line-height: 1.8; }
+        h1, h2, h3, h4, h5 { font-family: 'Frank Ruhl Libre', serif; }
+        .main-header { background-color: #0f172a; border-bottom: 2px solid #1e293b; padding: 2.5rem 1rem; text-align: center; }
+        .nav-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin-top: 1.5rem; }
+        .nav-link { padding: 0.8rem 1.5rem; font-weight: 700; color: #94a3b8; border-radius: 1rem; background: rgba(30, 41, 59, 0.5); border: 1px solid #1e293b; text-decoration: none; transition: 0.3s; }
+        .nav-link:hover, .nav-link.active { color: white; background-color: var(--primary-blue); box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3); }
+        
+        .timeline-wrapper { position: relative; max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
+        .timeline-line { position: absolute; right: 50px; top: 0; bottom: 0; width: 4px; background: linear-gradient(to bottom, transparent, var(--primary-blue), #1e293b); }
+        
+        .timeline-item { position: relative; margin-bottom: 100px; padding-right: 80px; }
+        .timeline-dot { position: absolute; right: 40px; top: 20px; width: 24px; height: 24px; background: var(--primary-blue); border: 4px solid var(--dark-bg); border-radius: 50%; box-shadow: 0 0 15px var(--primary-blue); z-index: 10; }
+        
+        .event-card { background: var(--card-bg); border: 1px solid #1e293b; padding: 3rem; border-radius: 2.5rem; transition: all 0.4s ease; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        .event-card:hover { transform: translateX(-15px); border-color: var(--primary-blue); box-shadow: 0 20px 50px rgba(59, 130, 246, 0.15); }
+        
+        .year-badge { display: inline-block; padding: 0.5rem 2rem; background: var(--primary-blue); color: white; font-weight: 900; font-size: 2.5rem; border-radius: 1rem; margin-bottom: 1.5rem; tracking-tighter; }
+        .event-title { font-size: 2.25rem; font-weight: 800; color: white; margin-bottom: 1.5rem; }
+        .event-desc { font-size: 1.15rem; color: #cbd5e1; margin-bottom: 2rem; }
+        
+        .significance-tag { background: rgba(59, 130, 246, 0.1); border-right: 5px solid var(--primary-blue); padding: 1.5rem; border-radius: 0 1rem 1rem 0; }
+        .significance-title { font-weight: 800; color: white; display: block; margin-bottom: 0.5rem; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 0.05em; }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header class="main-header">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex justify-center items-center gap-4 mb-2">
+                <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center font-bold text-white text-lg">US</div>
+                <h1 class="text-3xl md:text-4xl font-bold text-white tracking-tighter">מורשת ארה"ב</h1>
+            </div>
+            <nav class="nav-container">
+                <a href="index.html" class="nav-link">דף הבית</a>
+                <a href="founders.html" class="nav-link">אבות מייסדים</a>
+                <a href="constitution.html" class="nav-link">חוקת ארה"ב</a>
+                <a href="timeline.html" class="nav-link active">ציר זמן</a>
+                <a href="us-flag.html" class="nav-link">דגל ארה"ב</a>
+                <a href="anthem.html" class="nav-link">ההימנון הלאומי</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="py-20 px-6">
+        <div class="max-w-4xl mx-auto text-center mb-24">
+            <h2 class="text-6xl md:text-8xl font-bold text-white mb-8 tracking-tighter">ציר זמן של חירות</h2>
+            <p class="text-2xl text-slate-400 font-light italic leading-relaxed">
+                מזרעי המרד ועד למגילת הזכויות: המסע הכרונולוגי של הקמת הדמוקרטיה האמריקאית.
+            </p>
+        </div>
+
+        <div class="timeline-wrapper">
+            <div class="timeline-line"></div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <article class="event-card">
+                    <span class="year-badge">1763</span>
+                    <h3 class="event-title">חוזה פריז וסיום מלחמת שבע השנים</h3>
+                    <p class="event-desc">
+                        בריטניה מנצחת את צרפת והופכת לכוח הדומיננטי בצפון אמריקה. אולם, המלחמה הותירה את הכתר הבריטי בחובות עתק, מה שמוביל להחלטה להטיל מיסים חדשים על המושבות כדי לממן את הגנתן.
+                    </p>
+                    <div class="significance-tag">
+                        <span class="significance-title">המשמעות:</span>
+                        סיום תקופת "ההזנחה המבורכת" (Salutary Neglect). המושבות מתחילות להרגיש את ידה הכבדה של האימפריה.
+                    </div>
+                </article>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <article class="event-card">
+                    <span class="year-badge">1765</span>
+                    <h3 class="event-title">חוק הבולים (The Stamp Act)</h3>
+                    <p class="event-desc">
+                        המס הישיר הראשון שהוטל על המושבות. כל נייר רשמי, עיתון או קלף משחק חייב לשאת בול ממשלתי שנקנה בכסף בריטי. המחאה מתפרצת תחת הסיסמה: "אין מיסוי ללא ייצוג".
+                    </p>
+                    <div class="significance-tag">
+                        <span class="significance-title">המשמעות:</span>
+                        הקמת ארגון "בני החירות" (Sons of Liberty) ותחילת התיאום הפוליטי בין המושבות השונות.
+                    </div>
+                </article>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <article class="event-card">
+                    <span class="year-badge">1770</span>
+                    <h3 class="event-title">טבח בוסטון</h3>
+                    <p class="event-desc">
+                        מתיחות בנמל בוסטון מובילה לירי של חיילים בריטים לעבר המון זועם. חמישה אזרחים נהרגים, ביניהם קריספוס אטוקס. ג'ון אדמס מגן על החיילים במשפט כדי להוכיח את עליונות החוק.
+                    </p>
+                    <div class="significance-tag">
+                        <span class="significance-title">המשמעות:</span>
+                        האירוע הופך לסמל לעריצות הבריטית ומשמש את הפטריוטים להסתה נגד שלטון הכתר.
+                    </div>
+                </article>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <article class="event-card">
+                    <span class="year-badge">1773</span>
+                    <h3 class="event-title">מסיבת התה של בוסטון</h3>
+                    <p class="event-desc">
+                        מחאה רדיקלית נגד "חוק התה". פטריוטים מחופשים לאינדיאנים עולים על ספינות בריטיות ומשליכים מטען תה יקר ערך למימי הנמל.
+                    </p>
+                    <div class="significance-tag">
+                        <span class="significance-title">המשמעות:</span>
+                        בריטניה מגיבה ב"חוקי הכפייה" (Intolerable Acts), שסוגרים את נמל בוסטון ומבטלים את הממשל המקומי, מה שדוחף את המושבות לאיחוד.
+                    </div>
+                </article>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <article class="event-card">
+                    <span class="year-badge">1774</span>
+                    <h3 class="event-title">הקונגרס הקונטיננטלי הראשון</h3>
+                    <p class="event-desc">
+                        נציגים מ-12 מושבות (פרט לג'ורג'יה) מתכנסים בפילדלפיה כדי לתאם תגובה משותפת לחוקי הכפייה. הם מחליטים על חרם כלכלי ושולחים רשימת תלונות למלך ג'ורג' השלישי.
+                    </p>
+                    <div class="significance-tag">
+                        <span class="significance-title">המשמעות:</span>
+                        הקמת המוסד הלאומי הראשון שמתחיל לתפקד כממשלה בפועל של המושבות המאוחדות.
+                    </div>
+                </article>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <article class="event-card">
+                    <span class="year-badge">1775</span>
+                    <h3 class="event-title">לקסינגטון וקונקורד: הירייה הראשונה</h3>
+                    <p class="event-desc">
+                        העימות הצבאי הראשון. מיליציות ה"מינוטמן" (Minutemen) מתעמתות עם הצבא הבריטי שנשלח להחרים מאגרי נשק ולעצור את סמואל אדמס וג'ון הנקוק.
+                    </p>
+                    <div class="significance-tag">
+                        <span class="significance-title">המשמעות:</span>
+                        "הירייה שנשמעה ברחבי העולם". אין דרך חזרה: המושבות נמצאות במלחמה גלויה נגד האימפריה.
+                    </div>
+                </article>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <article class="event-card">
+                    <span class="year-badge">1776</span>
+                    <h3 class="event-title">הצהרת העצמאות</h3>
+                    <p class="event-desc">
+                        ב-4 ביולי מאמץ הקונגרס את הנוסח של תומאס ג'פרסון. המסמך מכריז על ניתוק הקשרים הפוליטיים עם בריטניה ומגדיר את הזכויות הבלתי ניתנות לערעור של האדם.
+                    </p>
+                    <div class="significance-tag">
+                        <span class="significance-title">המשמעות:</span>
+                        הולדתה הרשמית של ארצות הברית של אמריקה כאומה ריבונית.
+                    </div>
+                </article>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <article class="event-card">
+                    <span class="year-badge">1777</span>
+                    <h3 class="event-title">הניצחון בסרטוגה ותקנות הקונפדרציה</h3>
+                    <p class="event-desc">
+                        הניצחון הצבאי בסרטוגה משכנע את צרפת להצטרף למלחמה לצידה של ארה"ב. במקביל, הקונגרס מאמץ את "תקנות הקונפדרציה" כמבנה השלטון הראשון.
+                    </p>
+                    <div class="significance-tag">
+                        <span class="significance-title">המשמעות:</span>
+                        נקודת המפנה במלחמה (סיוע צרפתי) והניסיון הראשון ליצור מסגרת חוקית לאיחוד המדינות.
+                    </div>
+                </article>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <article class="event-card">
+                    <span class="year-badge">1781</span>
+                    <h3 class="event-title">כניעת קורנווליס ביוקטאון</h3>
+                    <p class="event-desc">
+                        כוחותיו של וושינגטון, בשילוב הצי הצרפתי, מכתרים את הצבא הבריטי המרכזי ביוקטאון. לורד קורנווליס נאלץ להיכנע.
+                    </p>
+                    <div class="significance-tag">
+                        <span class="significance-title">המשמעות:</span>
+                        סיום הקרבות הגדולים ביבשת. הבטחת הניצחון הצבאי האמריקאי במלחמה.
+                    </div>
+                </article>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <article class="event-card">
+                    <span class="year-badge">1783</span>
+                    <h3 class="event-title">חוזה פריז (השני)</h3>
+                    <p class="event-desc">
+                        בריטניה חותמת על הסכם שלום המכיר רשמית בעצמאות ארה"ב וקובע את גבולותיה מנהר המיסיסיפי במערב ועד לאוקיינוס האטלנטי.
+                    </p>
+                    <div class="significance-tag">
+                        <span class="significance-title">המשמעות:</span>
+                        הכרה בינלאומית מלאה בריבונות האמריקאית. סיום רשמי של המהפכה.
+                    </div>
+                </article>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <article class="event-card">
+                    <span class="year-badge">1787</span>
+                    <h3 class="event-title">ועידת החוקה בפילדלפיה</h3>
+                    <p class="event-desc">
+                        נציגי המדינות מתכנסים ב"בית המדינה" כדי לתקן את הממשל הכושל. במקום זאת, הם יוצרים מסמך חדש לחלוטין שמגדיר שלוש רשויות שלטון.
+                    </p>
+                    <div class="significance-tag">
+                        <span class="significance-title">המשמעות:</span>
+                        הולדת החוקה האמריקאית – המעבר מקונפדרציה רופפת לרפובליקה פדרלית חזקה ומאוחדת.
+                    </div>
+                </article>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <article class="event-card">
+                    <span class="year-badge">1788</span>
+                    <h3 class="event-title">אשרור החוקה (Ratification)</h3>
+                    <p class="event-desc">
+                        החוקה הופכת ל"חוק המדינה העליון" לאחר שניו המפשייר הופכת למדינה התשיעית המאשרת אותה. המאבק הציבורי מוכרע בזכות "כתבי הפדרליסט".
+                    </p>
+                    <div class="significance-tag">
+                        <span class="significance-title">המשמעות:</span>
+                        ניצחון החזון הפדרליסטי והקמת הממשל המרכזי הראשון בעולם המבוסס על הפרדת רשויות מלאה.
+                    </div>
+                </article>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <article class="event-card">
+                    <span class="year-badge">1789</span>
+                    <h3 class="event-title">השבעת וושינגטון ותחילת הממשל הפדרלי</h3>
+                    <p class="event-desc">
+                        ג'ורג' וושינגטון מושבע לנשיא הראשון ב"היכל הפדרלי" בניו יורק. הקונגרס הראשון מתכנס והמערכת השלטונית מתחילה לפעול.
+                    </p>
+                    <div class="significance-tag">
+                        <span class="significance-title">המשמעות:</span>
+                        הפיכת הניסוי הדמוקרטי בכתב למציאות חיה ומתפקדת.
+                    </div>
+                </article>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <article class="event-card">
+                    <span class="year-badge">1791</span>
+                    <h3 class="event-title">אשרור מגילת הזכויות (Bill of Rights)</h3>
+                    <p class="event-desc">
+                        עשרת התיקונים הראשונים לחוקה נכנסים לתוקף. הם מבטיחים את חירויות היסוד של האזרח ומגבילים את כוחה של הממשלה המרכזית.
+                    </p>
+                    <div class="significance-tag">
+                        <span class="significance-title">המשמעות:</span>
+                        השלמת המבנה החוקתי: איזון סופי בין כוח השלטון לבין זכויות הפרט.
+                    </div>
+                </article>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="bg-slate-950 text-slate-600 py-20 px-8 text-center border-t border-slate-900 mt-20">
+        <p class="text-blue-400 font-bold tracking-widest uppercase mb-4">The Founding Legacy Project</p>
+        <p class="text-sm">מחקר היסטורי מפורט ומעמיק | © 2026 | מבוסס על הארכיון הלאומי (NARA) וספריית הקונגרס.</p>
+    </footer>
+
+</body>
+</html>

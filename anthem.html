@@ -8,13 +8,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700&family=Frank+Ruhl+Libre:wght@700&display=swap" rel="stylesheet">
     <style>
         :root { --primary-blue: #3b82f6; --dark-bg: #020617; --card-bg: #0f172a; }
-        body { font-family: 'Assistant', sans-serif; background-color: var(--dark-bg); color: #e2e8f0; margin: 0; padding: 0; line-height: 1.6; }
+        body { font-family: 'Assistant', sans-serif; background-color: var(--dark-bg); color: #e2e8f0; margin: 0; padding: 0; line-height: 1.8; }
         h1, h2, h3 { font-family: 'Frank Ruhl Libre', serif; }
         .main-header { background-color: #0f172a; border-bottom: 2px solid #1e293b; padding: 2rem 1rem; text-align: center; }
         .nav-link { padding: 0.8rem 1.2rem; font-weight: 700; color: #94a3b8; border-radius: 1rem; background: rgba(30, 41, 59, 0.5); border: 1px solid #1e293b; text-decoration: none; transition: 0.3s; display: inline-block; font-size: 0.9rem; }
         .nav-link.active { color: white; background-color: var(--primary-blue); border-color: var(--primary-blue); }
-        .content-card { background: #0f172a; border: 1px solid #1e293b; border-radius: 1.5rem; padding: 2.5rem; margin-bottom: 2rem; }
-        .lyrics-box { background: rgba(59, 130, 246, 0.05); border-right: 4px solid var(--primary-blue); padding: 1.5rem; font-style: italic; }
+        .content-card { background: #0f172a; border: 1px solid #1e293b; border-radius: 1.5rem; padding: 2.5rem; margin-bottom: 3rem; }
+        .lyrics-box { background: rgba(59, 130, 246, 0.05); border-right: 4px solid var(--primary-blue); padding: 2rem; font-style: italic; }
+        /* סגנון מיוחד לקופסת הקרדיטים החדשה */
+        .credits-box { background: rgba(30, 58, 138, 0.3); border: 1px solid rgba(59, 130, 246, 0.4); }
     </style>
 </head>
 <body>
@@ -30,6 +32,19 @@
         </div>
     </header>
 
+
+    <main class="max-w-5xl mx-auto px-6 py-12">
+        <div class="text-center mb-16">
+            <h2 class="text-5xl md:text-6xl font-bold text-white mb-4 italic">The Star-Spangled Banner</h2>
+            <p class="text-blue-400 font-bold uppercase tracking-widest">"הו, אמור, האם תוכל לראות..."</p>
+        </div>
+
+        <div class="content-card shadow-2xl space-y-8 text-center mb-8">
+            <img src="https://i.postimg.cc/T1vCWBD1/1768232600016.png" alt="כתב היד המקורי" class="mx-auto rounded-xl max-w-full shadow-lg border border-slate-700">
+            <p class="text-slate-500 text-sm">כתב היד המקורי של פרנסיס סקוט קי, 1814 (ספריית הקונגרס)</p>
+            
+            <div class="bg-blue-900/10 p-6 rounded-2xl border border-blue-500/30">
+                <p class="text-white font-bold mb-4">האזנה לביצוע האינסטרומנטלי הרשמי (תזמורת הצי)</p>
     <main class="max-w-4xl mx-auto px-6 py-12">
         <div class="text-center mb-10">
             <h2 class="text-5xl font-bold text-white mb-4 italic">The Star-Spangled Banner</h2>
@@ -48,6 +63,58 @@
             </div>
         </div>
 
+        <div class="content-card credits-box mb-12">
+            <h3 class="text-xl font-bold text-white mb-6 text-center md:text-right border-b border-blue-500/30 pb-2">יוצרי ההמנון</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-center md:text-right">
+                <div>
+                    <span class="block text-blue-400 font-bold mb-1 uppercase tracking-wider">מילים (Lyrics)</span>
+                    <span class="text-white text-2xl font-bold">פרנסיס סקוט קי</span>
+                    <span class="block text-slate-400">Francis Scott Key (1814)</span>
+                </div>
+                <div>
+                    <span class="block text-blue-400 font-bold mb-1 uppercase tracking-wider">לחן (Music)</span>
+                    <span class="text-white text-2xl font-bold">ג'ון סטפורד סמית'</span>
+                    <span class="block text-slate-400">John Stafford Smith (c. 1773)</span>
+                    <span class="block text-slate-500 text-sm mt-1">(במקור: שיר בריטי בשם "To Anacreon in Heaven")</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-card">
+            <h3 class="text-2xl font-bold text-white mb-6 border-b border-blue-500/30 pb-2">הלילה בו נולד ההמנון: בולטימור תחת אש</h3>
+            <div class="space-y-6 text-slate-300 text-lg">
+                <p>
+                    ב-13 בספטמבר 1814, בעיצומה של מלחמת 1812, מצא את עצמו עורך הדין הצעיר <strong>פרנסיס סקוט קי</strong> על סיפון ספינה בריטית במשימה דיפלומטית. הבריטים סירבו לאפשר לו לעזוב, מכיוון שעמדו לפתוח בהתקפה על <strong>מצודת מקהנרי</strong> המגנה על נמל בולטימור.
+                </p>
+                <p>
+                    במשך 25 שעות רצופות, תחת גשם זלעפות, הפציצו ספינות הצי הבריטי את המצודה ב"זוהר האדום של הרקטות" ובפצצות מרגמה. קי, שצפה מהספינה, ידע שאם הדגל האמריקאי יורד, העיר אבודה.
+                </p>
+                <p>
+                    עם שחר ה-14 בספטמבר, מבעד לעשן ולערפל, נגלה המחזה: דגל ענק (בגודל 9x13 מטרים, שנתפר במיוחד כדי להיראות מרחוק) עדיין התנוסס בגאווה. המראה המרהיב נתן לו את ההשראה לכתוב את השיר "הגנת מצודת מקהנרי" על מעטפה ישנה.
+                </p>
+            </div>
+        </div>
+
+        <div class="content-card">
+            <h3 class="text-2xl font-bold text-white mb-6 border-b border-blue-500/30 pb-2">מן המילים אל המנגינה: אירוניה היסטורית</h3>
+            <div class="space-y-6 text-slate-300 text-lg">
+                <p>
+                    השיר שכתב קי פורסם במהירות בעיתונות, תחת השם "The Star-Spangled Banner". באופן אירוני, המנגינה שאליה הותאם השיר הייתה במקורה שיר מועדונים בריטי פופולרי בשם <strong>"To Anacreon in Heaven"</strong>, שהולחן על ידי המלחין הבריטי <strong>ג'ון סטפורד סמית'</strong> (John Stafford Smith) בסביבות שנת 1773.
+                </p>
+                <p>
+                    השילוב של המילים הפטריוטיות האמריקאיות עם המנגינה הבריטית הקצבית והמורכבת כבש את הלבבות. במהלך המאה ה-19, הוא הפך לאחד השירים הפופולריים ביותר באירועים לאומיים.
+                </p>
+            </div>
+        </div>
+
+        <div class="content-card">
+            <h3 class="text-2xl font-bold text-white mb-6 border-b border-blue-500/30 pb-2">הפיכתו להמנון הלאומי (1931)</h3>
+            <div class="space-y-6 text-slate-300 text-lg">
+                <p>
+                    למרות הפופולריות שלו, השיר לא היה ההמנון הרשמי במשך יותר ממאה שנה. כבר ב-1889 הורה משרד הצי לנגן אותו בטקסים, וב-1916 חתם הנשיא וודרו וילסון על צו נשיאותי שהכיר בו בשימוש צבאי.
+                </p>
+                <p>
+                    אך רק ב-3 במרץ 1931, לאחר קמפיין ציבורי נרחב (שכלל גם התנגדות בגלל המנגינה המורכבת לשירה), חתם הנשיא <strong>הרברט הובר</strong> על חוק הקונגרס שהפך את "The Star-Spangled Banner" להמנון הלאומי הרשמי היחיד של ארצות הברית של אמריקה.
         <div class="content-card">
             <h3 class="text-2xl font-bold text-white mb-6 border-b border-blue-500/30 pb-2">הלילה בו נולד ההמנון</h3>
             <div class="space-y-6 text-slate-300 text-lg">
@@ -67,6 +134,19 @@
         </div>
 
         <div class="content-card">
+            <h3 class="text-2xl font-bold text-white mb-6 border-b border-blue-500/30 pb-2">מילות השיר (בית ראשון - תרגום מילולי)</h3>
+            <div class="lyrics-box text-white text-xl leading-relaxed mb-6">
+                הוֹ, אֱמֹר, הֲתוּכַל לִרְאוֹת, בְּאוֹר הַשַּׁחַר הָרִאשׁוֹן,<br>
+                אֶת מָה שֶׁבִּגְאווה כֹּה רַבָּה בֵּרַכְנוּ בְּדִמְדּוּמֵי הָעֶרֶב הָאַחֲרוֹנים?<br>
+                שֶׁפַּסָּיו הָרְחָבִים וְכוֹכָבָיו הַזּוֹהֲרִים, מִבַּעַד לַקְּרָב הַמְסֻכָּן,<br>
+                מֵעַל לַסּוֹלְלוֹת שֶׁעֲלֵיהֶן צָפִינוּ, הִתְנוֹפְפוּ בַּאֲצִילוּת שֶׁכָּזוֹ?<br>
+                וְזוֹהַר הָרַקֵטוֹת הָאָדֹם, הַפְּצָצוֹת הַמִּתְפּוֹצְצוֹת בָּאֲוִיר,<br>
+                נָתְנוּ הוכָחָה לְאֹרֶךְ הַלַּיְלָה שֶׁדִּגְלֵנוּ עֲדַיִן שָׁם;<br>
+                הוֹ, אֱמֹר, הַאִם הַדֶּגֶל הַזֶּה זְרוּעַ הַכּוֹכָבִים עֲדַיִן מִתְנוֹפֵף,<br>
+                מֵעַל אֶרֶץ הַחופֶשׁ וּמֵעַל בֵּיתָם שֶׁל הָאַמִּיצִים?
+            </div>
+            <p class="text-slate-300 text-lg leading-relaxed">
+                השיר המקורי כולל ארבעה בתים, אך בדרך כלל נהוג לשיר רק את הבית הראשון בטקסים ובאירועי ספורט. הבית מסתיים לא בקביעה, אלא בשאלה רטורית ודרמטית.
             <h3 class="text-2xl font-bold text-white mb-6 border-b border-blue-500/30 pb-2">מילות השיר (תרגום לעברית)</h3>
             <div class="lyrics-box text-white text-xl leading-relaxed">
                 אוֹ, אֱמֹר, הֲתוּכַל לִרְאוֹת, בְּאוֹר הַשַּׁחַר הָרִאשׁוֹן,<br>

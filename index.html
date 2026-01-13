@@ -3,6 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>מורשת ארה"ב: סיפורה של אומה - דף הבית</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700&family=Frank+Ruhl+Libre:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary-blue: #3b82f6; --dark-bg: #020617; --card-bg: #0f172a; }
+        body { font-family: 'Assistant', sans-serif; background-color: var(--dark-bg); color: #e2e8f0; margin: 0; line-height: 1.8; }
+        h1, h2, h3, h4 { font-family: 'Frank Ruhl Libre', serif; }
+        
+        /* Header מאוחד - ללא שינוי */
+        .main-header { background-color: #0f172a; border-bottom: 2px solid #1e293b; padding: 2.5rem 1rem; text-align: center; }
+        .nav-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin-top: 1.5rem; }
+        .nav-link { padding: 0.8rem 1.5rem; font-weight: 700; color: #94a3b8; border-radius: 1rem; background: rgba(30, 41, 59, 0.5); border: 1px solid #1e293b; text-decoration: none; transition: 0.3s; }
+        .nav-link:hover, .nav-link.active { color: white; background-color: var(--primary-blue); box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3); }
+        
+        /* עיצוב ייחודי לדף הבית החדש */
+        .hero-section { 
+            background: linear-gradient(rgba(2, 6, 23, 0.8), rgba(2, 6, 23, 0.8)), url('https://images.unsplash.com/photo-1508433957232-3107f5ed2035?q=80&w=2000&auto=format&fit=crop');
+            background-size: cover; background-position: center; padding: 120px 20px; text-align: center; border-bottom: 1px solid #1e293b;
     <title>מורשת ארה"ב: אבות מייסדים וחוקה - המהדורה המלאה והיציבה</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700&family=Frank+Ruhl+Libre:wght@700&display=swap" rel="stylesheet">
@@ -148,9 +166,40 @@
             font-weight: 700;
             cursor: pointer;
         }
+        
+        .content-card { background: var(--card-bg); border: 1px solid #1e293b; padding: 2.5rem; border-radius: 2rem; transition: 0.4s; height: 100%; display: flex; flex-direction: column; justify-content: space-between; }
+        .content-card:hover { transform: translateY(-10px); border-color: var(--primary-blue); box-shadow: 0 20px 40px -15px rgba(59, 130, 246, 0.3); }
+        
+        .topic-badge { background: rgba(59, 130, 246, 0.1); color: var(--primary-blue); padding: 0.5rem 1rem; border-radius: 2rem; font-weight: 700; font-size: 0.9rem; margin-bottom: 1rem; display: inline-block; }
+        .card-link { display: inline-flex; items-center; gap: 0.5rem; color: var(--primary-blue); font-weight: 700; text-decoration: none; transition: 0.3s; }
+        .card-link:hover { gap: 0.8rem; }
     </style>
 </head>
 <body class="antialiased">
+
+    <header class="main-header">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex justify-center items-center gap-4 mb-2">
+                <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center font-bold text-white text-lg shadow-lg">US</div>
+                <h1 class="text-3xl md:text-4xl font-bold text-white tracking-tight">מורשת ארה"ב</h1>
+            </div>
+            <nav class="nav-container">
+                <a href="index.html" class="nav-link active">דף הבית</a>
+                <a href="founders.html" class="nav-link">אבות מייסדים</a>
+                <a href="constitution.html" class="nav-link">חוקת ארה"ב</a>
+                <a href="timeline.html" class="nav-link">ציר זמן</a>
+                <a href="us-flag.html" class="nav-link">דגל ארה"ב</a>
+                <a href="anthem.html" class="nav-link">ההימנון הלאומי</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero-section">
+        <div class="max-w-4xl mx-auto px-6">
+            <h2 class="text-5xl md:text-7xl font-bold text-white mb-6 tracking-tighter">סיפורה של אומה</h2>
+            <p class="text-2xl text-slate-300 font-semibold leading-relaxed">
+                מסע אל שורשי הדמוקרטיה המודרנית: מחזונם של האבות המייסדים, דרך עקרונות החוקה, ועד לסמלים המלווים את ארה"ב עד היום.
+            </p>
 
     <!-- Header - Static (Moves with scroll) -->
     <header class="main-header">
@@ -169,6 +218,47 @@
         </div>
     </header>
 
+    <main class="max-w-7xl mx-auto py-20 px-6">
+        
+        <div class="text-center mb-16">
+            <h3 class="text-4xl font-bold text-white mb-6">עמודי התווך של החירות</h3>
+            <div class="w-24 h-1 bg-blue-600 mx-auto rounded-full"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <div class="content-card">
+                <div>
+                    <span class="topic-badge">הנהגה וחזון</span>
+                    <h4 class="text-2xl font-bold text-white mb-4">דיוקנאות של מנהיגות</h4>
+                    <p class="text-slate-400 mb-6">הכירו לעומק את הדמויות שעיצבו את גורל העולם המודרני. מוושינגטון ועד המילטון – סיפורי הקרבה, חזון ופוליטיקה נועזת.</p>
+                </div>
+                <a href="founders.html" class="card-link">לכל המנהיגים <span>←</span></a>
+            </div>
+
+            <div class="content-card">
+                <div>
+                    <span class="topic-badge">משפט וערכים</span>
+                    <h4 class="text-2xl font-bold text-white mb-4">חוקת ארה"ב</h4>
+                    <p class="text-slate-400 mb-6">ניתוח מעמיק של עמודי התווך של הדמוקרטיה: הפרדת הרשויות, מגילת הזכויות והמנגנונים שהמציאו את הממשל העצמי.</p>
+                </div>
+                <a href="constitution.html" class="card-link">לחקור את החוקה <span>←</span></a>
+            </div>
+
+            <div class="content-card">
+                <div>
+                    <span class="topic-badge">היסטוריה בתנועה</span>
+                    <h4 class="text-2xl font-bold text-white mb-4">ציר זמן של חירות</h4>
+                    <p class="text-slate-400 mb-6">הדרך המפותלת ממרד בכתר הבריטי ב-1773 ועד להשבעת הממשל הפדרלי הראשון. האירועים ששינו את פני ההיסטוריה.</p>
+                </div>
+                <a href="timeline.html" class="card-link">לציר הזמן המלא <span>←</span></a>
+            </div>
+
+            <div class="content-card">
+                <div>
+                    <span class="topic-badge">סמליות לאומית</span>
+                    <h4 class="text-2xl font-bold text-white mb-4">הפסים והכוכבים</h4>
+                    <p class="text-slate-400 mb-6">סיפורו של "Old Glory" – מהדגל הראשון של 13 המושבות ועד לעיצוב המודרני של 50 הכוכבים. סמליות הצבעים וההיסטוריה שמאחוריהם.</p>
     <!-- PAGE: FOUNDING FATHERS -->
     <div id="page-founders" class="page-content py-12">
         <div class="max-w-7xl mx-auto px-6">
@@ -347,8 +437,14 @@
                 <div class="lg:w-1/2" onclick="openModal('https://i.postimg.cc/MK0CQZBC/1767162611148.png')">
                     <img src="https://i.postimg.cc/MK0CQZBC/1767162611148.png" alt="[צילום החוקה]" class="w-full h-auto rounded-xl shadow-2xl cursor-zoom-in border border-slate-700">
                 </div>
+                <a href="us-flag.html" class="card-link">אל עמוד הדגל <span>←</span></a>
             </div>
 
+            <div class="content-card">
+                <div>
+                    <span class="topic-badge">מורשת תרבותית</span>
+                    <h4 class="text-2xl font-bold text-white mb-4">ההימנון הלאומי</h4>
+                    <p class="text-slate-400 mb-6">"The Star-Spangled Banner" – השיר שנולד מתוך הלהבות במצודת מקהנרי. סיפורם של פרנסיס סקוט קי והמנגינה המרגשת.</p>
             <div class="space-y-12">
                 <h3 class="text-3xl font-bold text-white text-center mb-16 uppercase tracking-widest">8 עמודי התווך של הדמוקרטיה</h3>
                 
@@ -393,7 +489,29 @@
                         <p class="text-slate-400 leading-relaxed text-lg">המייסדים הבינו שהעולם ישתנה ולכן יצרו מנגנון רשמי לעדכון החוקה. התהליך קשה במיוחד (רוב של שני שלישים ואישור של שלושה רבעים) כדי להבטיח שרק שינויים בעלי קונצנזוס לאומי רחב יתקבלו, מה שמאפשר לחוקה להתאים את עצמה לזמנים משתנים.</p>
                     </div>
                 </div>
+                <a href="anthem.html" class="card-link">לסיפור ההמנון <span>←</span></a>
             </div>
+
+            <div class="content-card border-dashed border-slate-700 bg-transparent opacity-75 hover:opacity-100">
+                <div class="flex flex-col items-center justify-center h-full text-center">
+                    <span class="topic-badge bg-slate-800 text-slate-400 mb-4">בקרוב</span>
+                    <h4 class="text-xl font-bold text-slate-500 mb-2">פרקים נוספים</h4>
+                    <p class="text-slate-600 text-sm">הפרויקט ממשיך להתרחב עם מחקרים היסטוריים חדשים.</p>
+                </div>
+            </div>
+
+        </div>
+
+        <hr class="my-20 border-slate-800">
+
+        <div class="max-w-4xl mx-auto text-center md:text-right">
+            <h3 class="text-3xl font-bold text-white mb-8">על פרויקט מורשת ארה"ב</h3>
+            <div class="space-y-6 text-lg text-slate-400 text-justify leading-loose">
+                <p>
+                    פרויקט זה נועד להנגיש את ההיסטוריה המורכבת והמרגשת של ארצות הברית לקהל דובר העברית. אנו מאמינים כי הבנת העקרונות שעליהם הוקמה האומה האמריקאית – חירות, שוויון ושלטון החוק – רלוונטית כיום יותר מתמיד.
+                </p>
+            </div>
+        </div>
         </div>
     </div>
 
@@ -454,6 +572,9 @@
         <img id="modalImage" src="" alt="[תמונה מוגדלת]" class="max-w-[95%] max-h-[90%] object-contain rounded-lg shadow-2xl">
     </div>
 
+    <footer class="bg-slate-950 text-slate-600 py-16 px-6 text-center border-t border-slate-900">
+        <p class="text-blue-400 font-bold tracking-widest uppercase mb-4">LIBERTY & HERITAGE PROJECT</p>
+        <p class="text-sm">מחקר היסטורי ועיצוב: מורשת ארה"ב | © 2026</p>
     <footer class="bg-slate-950 text-slate-600 py-16 px-6 text-center border-t border-slate-900 mt-20">
         <p class="text-blue-400 font-bold tracking-widest uppercase mb-4">Liberty & Heritage Project</p>
         <p class="text-sm">כל הזכויות שמורות © 2025 | מבוסס על מחקרים ביוגרפיים והיסטוריים רשמיים.</p>
