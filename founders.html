@@ -10,17 +10,16 @@
         :root { --primary-blue: #3b82f6; --dark-bg: #020617; --card-bg: #0f172a; }
         body { font-family: 'Assistant', sans-serif; background-color: var(--dark-bg); color: #e2e8f0; margin: 0; }
         h1, h2, h3 { font-family: 'Frank Ruhl Libre', serif; }
-        
         .main-header { background-color: #0f172a; border-bottom: 2px solid #1e293b; padding: 2rem 1rem; text-align: center; }
         .nav-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin-top: 1.5rem; }
         .nav-link { padding: 0.8rem 1.5rem; font-weight: 700; color: #94a3b8; border-radius: 1rem; background: rgba(30, 41, 59, 0.5); border: 1px solid #1e293b; text-decoration: none; transition: 0.3s; }
         .nav-link:hover, .nav-link.active { color: white; background-color: var(--primary-blue); }
-
-        .founder-card { background-color: var(--card-bg); border: 1px solid #1e293b; border-radius: 2rem; overflow: hidden; display: flex; flex-direction: column; transition: transform 0.4s ease; }
+        .founder-card { background-color: var(--card-bg); border: 1px solid #1e293b; border-radius: 2rem; overflow: hidden; display: flex; flex-direction: column; transition: transform 0.4s ease; height: 100%; }
         .founder-card:hover { transform: translateY(-5px); border-color: var(--primary-blue); }
-        .portrait-container { width: 100%; height: 450px; background-color: #000; overflow: hidden; }
+        .portrait-container { width: 100%; height: 450px; background-color: #000; overflow: hidden; cursor: zoom-in; }
         .portrait-img { width: 100%; height: 100%; object-fit: cover; object-position: top; filter: brightness(0.85); }
         .quote-box { background: rgba(59, 130, 246, 0.08); border-right: 4px solid var(--primary-blue); padding: 1.5rem; margin-top: 1.5rem; font-style: italic; border-radius: 0 0.5rem 0.5rem 0; display: none; }
+        #imageModal { display: none; position: fixed; inset: 0; background-color: rgba(2, 6, 23, 0.98); z-index: 2000; justify-content: center; align-items: center; backdrop-filter: blur(10px); }
     </style>
 </head>
 <body>
@@ -46,8 +45,9 @@
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+            
             <article class="founder-card">
-                <div class="portrait-container">
+                <div class="portrait-container" onclick="openModal('https://i.postimg.cc/qtfqyBBS/Gilbert-Stuart-Williamstown-Portrait-of-George-Washington.jpg')">
                     <img src="https://i.postimg.cc/qtfqyBBS/Gilbert-Stuart-Williamstown-Portrait-of-George-Washington.jpg" alt="ג'ורג' וושינגטון" class="portrait-img">
                 </div>
                 <div class="p-8 flex-grow">
@@ -61,8 +61,117 @@
                 </div>
             </article>
 
-            </div>
+            <article class="founder-card">
+                <div class="portrait-container" onclick="openModal('https://i.postimg.cc/kVrGKMMf/Gilbert-Stuart-John-Adams-c-1800-1815-NGA-42933.jpg')">
+                    <img src="https://i.postimg.cc/kVrGKMMf/Gilbert-Stuart-John-Adams-c-1800-1815-NGA-42933.jpg" alt="ג'ון אדמס" class="portrait-img">
+                </div>
+                <div class="p-8 flex-grow">
+                    <span class="text-blue-500 font-bold text-sm block mb-2 uppercase tracking-wide">נשיא שני</span>
+                    <h3 class="text-3xl font-bold text-white mb-4">ג'ון אדמס</h3>
+                    <div class="text-slate-400 leading-relaxed space-y-4">
+                        <p>אדמס היה ה"מנוע" של המהפכה בבוסטון. עורך דין מבריק שהאמין בשלטון החוק מעל הכל...</p>
+                    </div>
+                    <button onclick="toggleQuote(this)" class="mt-6 text-blue-400 font-bold">לציטוט ומורשת ↓</button>
+                    <div class="quote-box text-slate-300">"אני חייב ללמוד פוליטיקה ומלחמה, כדי שבניי יוכלו ללמוד מתמטיקה ופילוסופיה."</div>
+                </div>
+            </article>
+
+            <article class="founder-card">
+                <div class="portrait-container" onclick="openModal('https://i.postimg.cc/PLGJYff4/Rembrandt-Peale-Thomas-Jefferson-Google-Art-Project.jpg')">
+                    <img src="https://i.postimg.cc/PLGJYff4/Rembrandt-Peale-Thomas-Jefferson-Google-Art-Project.jpg" alt="תומאס ג'פרסון" class="portrait-img">
+                </div>
+                <div class="p-8 flex-grow">
+                    <span class="text-blue-500 font-bold text-sm block mb-2 uppercase tracking-wide">נשיא שלישי</span>
+                    <h3 class="text-3xl font-bold text-white mb-4">תומאס ג'פרסון</h3>
+                    <div class="text-slate-400 leading-relaxed space-y-4">
+                        <p>ג'פרסון היה הפילוסוף של החירות. בגיל 33 כתב את הצהרת העצמאות, מסמך שהגדיר את ערכי היסוד של המערב...</p>
+                    </div>
+                    <button onclick="toggleQuote(this)" class="mt-6 text-blue-400 font-bold">לציטוט ומורשת ↓</button>
+                    <div class="quote-box text-slate-300">"אני מעדיף את הסכנות של החירות על פני השקט של העבדות."</div>
+                </div>
+            </article>
+
+            <article class="founder-card">
+                <div class="portrait-container" onclick="openModal('https://i.postimg.cc/WDRzgppS/Joseph-Siffrein-Duplessis-Benjamin-Franklin-Google-Art_Project.jpg')">
+                    <img src="https://i.postimg.cc/WDRzgppS/Joseph-Siffrein-Duplessis-Benjamin-Franklin-Google-Art_Project.jpg" alt="בנימין פרנקלין" class="portrait-img">
+                </div>
+                <div class="p-8 flex-grow">
+                    <span class="text-blue-500 font-bold text-sm block mb-2 uppercase tracking-wide">דיפלומט ומדען</span>
+                    <h3 class="text-3xl font-bold text-white mb-4">בנימין פרנקלין</h3>
+                    <div class="text-slate-400 leading-relaxed space-y-4">
+                        <p>פרנקלין היה "האמריקאי הראשון". מדען בעל שם עולמי (חוקר החשמל וממציא כליא הברק) שהפך לדמות המאחדת של המהפכה...</p>
+                    </div>
+                    <button onclick="toggleQuote(this)" class="mt-6 text-blue-400 font-bold">לציטוט ומורשת ↓</button>
+                    <div class="quote-box text-slate-300">"מי שמוותר על חירות חיונית בשביל ביטחון זמני, אינו ראוי לאף אחד מהם."</div>
+                </div>
+            </article>
+
+            <article class="founder-card">
+                <div class="portrait-container" onclick="openModal('https://i.postimg.cc/bGXrkYYQ/Alexander-Hamilton-portrait-by-John-Trumbull-1806.jpg')">
+                    <img src="https://i.postimg.cc/bGXrkYYQ/Alexander-Hamilton-portrait-by-John-Trumbull-1806.jpg" alt="אלכסנדר המילטון" class="portrait-img">
+                </div>
+                <div class="p-8 flex-grow">
+                    <span class="text-blue-500 font-bold text-sm block mb-2 uppercase tracking-wide">שר האוצר הראשון</span>
+                    <h3 class="text-3xl font-bold text-white mb-4">אלכסנדר המילטון</h3>
+                    <div class="text-slate-400 leading-relaxed space-y-4">
+                        <p>המילטון הגיע מהקריביים כיתום חסר כל והפך לאדריכל המערכת הפיננסית של ארה"ב...</p>
+                    </div>
+                    <button onclick="toggleQuote(this)" class="mt-6 text-blue-400 font-bold">לציטוט ומורשת ↓</button>
+                    <div class="quote-box text-slate-300">"אלו שעומדים עבור כלום, ייפלו עבור כל דבר."</div>
+                </div>
+            </article>
+
+            <article class="founder-card">
+                <div class="portrait-container" onclick="openModal('https://i.postimg.cc/t10JWRR3/James-Madison.jpg')">
+                    <img src="https://i.postimg.cc/t10JWRR3/James-Madison.jpg" alt="ג'יימס מדיסון" class="portrait-img">
+                </div>
+                <div class="p-8 flex-grow">
+                    <span class="text-blue-500 font-bold text-sm block mb-2 uppercase tracking-wide">אבי החוקה</span>
+                    <h3 class="text-3xl font-bold text-white mb-4">ג'יימס מדיסון</h3>
+                    <div class="text-slate-400 leading-relaxed space-y-4">
+                        <p>מדיסון היה האדריכל המבני של הממשל. הוא הגיע לוועידת החוקה עם תוכנית מגובשת...</p>
+                    </div>
+                    <button onclick="toggleQuote(this)" class="mt-6 text-blue-400 font-bold">לציטוט ומורשת ↓</button>
+                    <div class="quote-box text-slate-300">"הצטברות כל הכוחות באותן ידיים היא ההגדרה המדויקת של עריצות."</div>
+                </div>
+            </article>
+
+            <article class="founder-card">
+                <div class="portrait-container" onclick="openModal('https://i.postimg.cc/zLmvKDDF/Gilbert-Stuart-John-Jay-Google-Art-Project-cropped-2.jpg')">
+                    <img src="https://i.postimg.cc/zLmvKDDF/Gilbert-Stuart-John-Jay-Google-Art-Project-cropped-2.jpg" alt="ג'ון ג'יי" class="portrait-img">
+                </div>
+                <div class="p-8 flex-grow">
+                    <span class="text-blue-500 font-bold text-sm block mb-2 uppercase tracking-wide">נשיא העליון הראשון</span>
+                    <h3 class="text-3xl font-bold text-white mb-4">ג'ון ג'יי</h3>
+                    <div class="text-slate-400 leading-relaxed space-y-4">
+                        <p>ג'יי היה עמוד התווך המוסרי והמשפטי של המהפכה. הוא שירת כנשיא הקונגרס הקונטיננטלי...</p>
+                    </div>
+                    <button onclick="toggleQuote(this)" class="mt-6 text-blue-400 font-bold">לציטוט ומורשת ↓</button>
+                    <div class="quote-box text-slate-300">"אלו שבבעלותם המדינה צריכים לשלוט בה."</div>
+                </div>
+            </article>
+
+            <article class="founder-card">
+                <div class="portrait-container" onclick="openModal('https://i.postimg.cc/9XZrwZ2m/John-Hancock-1770.jpg')">
+                    <img src="https://i.postimg.cc/9XZrwZ2m/John-Hancock-1770.jpg" alt="ג'ון הנקוק" class="portrait-img">
+                </div>
+                <div class="p-8 flex-grow">
+                    <span class="text-blue-500 font-bold text-sm block mb-2 uppercase tracking-wide">נשיא הקונגרס</span>
+                    <h3 class="text-3xl font-bold text-white mb-4">ג'ון הנקוק</h3>
+                    <div class="text-slate-400 leading-relaxed space-y-4">
+                        <p>הנקוק היה סוחר עשיר שהשתמש בכל הונו העצום כדי לממן את תנועת ההתנגדות לבריטים...</p>
+                    </div>
+                    <button onclick="toggleQuote(this)" class="mt-6 text-blue-400 font-bold">לציטוט ומורשת ↓</button>
+                    <div class="quote-box text-slate-300">"אנחנו חייבים להיות מאוחדים, או שנתלה כולנו בנפרד."</div>
+                </div>
+            </article>
+
+        </div>
     </main>
+
+    <div id="imageModal" onclick="closeModal()">
+        <img id="modalImage" src="" alt="תמונה מוגדלת" class="max-w-[95%] max-h-[90%] object-contain rounded-lg shadow-2xl">
+    </div>
 
     <script>
         function toggleQuote(btn) {
@@ -70,6 +179,17 @@
             const isVisible = quoteBox.style.display === 'block';
             document.querySelectorAll('.quote-box').forEach(box => box.style.display = 'none');
             quoteBox.style.display = isVisible ? 'none' : 'block';
+        }
+        function openModal(src) {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            modalImg.src = src;
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden'; 
+        }
+        function closeModal() {
+            document.getElementById('imageModal').style.display = 'none';
+            document.body.style.overflow = 'auto'; 
         }
     </script>
 </body>
