@@ -9,21 +9,34 @@
     <style>
         :root { --primary-blue: #3b82f6; --dark-bg: #020617; --card-bg: #0f172a; }
         body { font-family: 'Assistant', sans-serif; background-color: var(--dark-bg); color: #e2e8f0; margin: 0; line-height: 1.8; }
-        h1, h2, h3, h4 { font-family: 'Frank Ruhl Libre', serif; }
+        h1, h2, h3, h4, h5 { font-family: 'Frank Ruhl Libre', serif; }
         .main-header { background-color: #0f172a; border-bottom: 2px solid #1e293b; padding: 2.5rem 1rem; text-align: center; }
         .nav-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin-top: 1.5rem; }
         .nav-link { padding: 0.8rem 1.5rem; font-weight: 700; color: #94a3b8; border-radius: 1rem; background: rgba(30, 41, 59, 0.5); border: 1px solid #1e293b; text-decoration: none; transition: 0.3s; }
         .nav-link:hover, .nav-link.active { color: white; background-color: var(--primary-blue); box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3); }
-        .constitution-point { background: rgba(30, 41, 59, 0.4); border-right: 6px solid var(--primary-blue); padding: 2.5rem; border-radius: 0 1.5rem 1.5rem 0; margin-bottom: 3rem; box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5); }
+        
+        .hero-section { background: linear-gradient(rgba(2, 6, 23, 0.85), rgba(2, 6, 23, 0.85)), url('https://i.postimg.cc/MK0CQZBC/1767162611148.png'); background-size: cover; background-position: center; padding: 100px 20px; text-align: center; border-bottom: 1px solid #1e293b; }
+        
+        .info-section { background: var(--card-bg); border: 1px solid #1e293b; padding: 3rem; border-radius: 2rem; margin-bottom: 4rem; box-shadow: 0 20px 50px rgba(0,0,0,0.3); }
+        .constitution-point { background: rgba(30, 41, 59, 0.4); border-right: 6px solid var(--primary-blue); padding: 2.5rem; border-radius: 0 1.5rem 1.5rem 0; margin-bottom: 3rem; }
+        
+        .amendment-card { background: rgba(15, 23, 42, 0.8); border: 1px solid #334155; padding: 2rem; border-radius: 1.5rem; transition: all 0.3s; }
+        .amendment-card:hover { border-color: var(--primary-blue); transform: translateY(-5px); }
+        
         .highlight-text { color: var(--primary-blue); font-weight: 700; }
-        .info-section { background: var(--card-bg); border: 1px solid #1e293b; padding: 3rem; border-radius: 2rem; margin-bottom: 4rem; }
+        .sidebar-note { background: rgba(59, 130, 246, 0.1); border-right: 4px solid var(--primary-blue); padding: 1.5rem; border-radius: 0 0.5rem 0.5rem 0; font-style: italic; margin: 1.5rem 0; }
+        
+        .structure-img-container { background: white; padding: 2rem; border-radius: 2rem; margin: 3rem 0; text-align: center; }
     </style>
 </head>
 <body class="antialiased">
 
     <header class="main-header">
         <div class="max-w-7xl mx-auto">
-            <h1 class="text-3xl font-bold text-white mb-2">מורשת ארה"ב</h1>
+            <div class="flex justify-center items-center gap-4 mb-2">
+                <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center font-bold text-white text-lg">US</div>
+                <h1 class="text-3xl md:text-4xl font-bold text-white tracking-tighter">מורשת ארה"ב</h1>
+            </div>
             <nav class="nav-container">
                 <a href="index.html" class="nav-link">דף הבית</a>
                 <a href="founders.html" class="nav-link">אבות מייסדים</a>
@@ -35,102 +48,144 @@
         </div>
     </header>
 
-    <main class="max-w-6xl mx-auto py-20 px-6">
-        <section class="text-center mb-16">
+    <section class="hero-section">
+        <div class="max-w-4xl mx-auto">
             <h2 class="text-5xl md:text-7xl font-bold text-white mb-6">חוקת ארצות הברית</h2>
-            <p class="text-2xl text-slate-400 italic">"We the People" - ניתוח מעמיק של יסודות הרפובליקה.</p>
-        </section>
+            <p class="text-2xl text-blue-400 italic font-semibold">"אנחנו, בני העם..." – המהפכה של שלטון החוק והחירות.</p>
+        </div>
+    </section>
 
-        <div class="space-y-12">
-            
+    <main class="max-w-6xl mx-auto py-20 px-6">
+        
+        <div class="info-section">
+            <h3 class="text-3xl font-bold text-white mb-6 underline decoration-blue-600 underline-offset-8">הנס בפילדלפיה: קיץ 1787</h3>
+            <p class="text-lg text-slate-300 mb-6">
+                לאחר הניצחון המזהיר על האימפריה הבריטית, מצאה עצמה ארצות הברית הצעירה על סף תהום. המבנה הממשלתי הראשון, "תקנות הקונפדרציה", הותיר את הממשל המרכזי משותק: הוא לא יכול היה לגבות מיסים, לנהל סחר חוץ אחיד או לתחזק צבא לאומי. המדינות היו מסוכסכות ביניהן, והאנרכיה נראתה באופק.
+            </p>
+            <div class="sidebar-note">
+                "אילו בני אדם היו מלאכים, לא היה צורך בממשלה. אילו מלאכים היו שולטים בבני אדם, לא היה צורך בבלמים חיצוניים או פנימיים על הממשלה." – ג'יימס מדיסון, הפדרליסט מס' 51.
+            </div>
+            <p class="text-lg text-slate-300 mt-6">
+                במאי 1787, התכנסו 55 נציגים (The Framers) בבית המדינה של פנסילבניה. במשך קיץ לוהט וסגור מאחורי דלתות נעולות, הם ניהלו את הוויכוחים האינטלקטואליים והפוליטיים הקשים ביותר בתולדותיהם. הם התמודדו עם שאלות גורליות: איך לאזן בין מדינות גדולות לקטנות? איך להפריד את הכוח כדי למנוע רודנות? ואיך ליצור רשות מבצעת חזקה אך מבוקרת? ב-17 בספטמבר 1787, נחתם המסמך שהפך לחוקה הכתובה הוותיקה והיציבה ביותר בעולם.
+            </p>
+        </div>
+
+        <h3 class="text-4xl font-bold text-white mb-12 text-center">8 עמודי התווך של המבנה הדמוקרטי</h3>
+        
+        <div class="space-y-12 mb-20">
             <div class="constitution-point">
                 <h4 class="text-3xl font-bold text-white mb-4">1. ריבונות העם (Popular Sovereignty)</h4>
-                <p class="text-slate-300 text-lg">
-                    זהו העיקרון המכונן לפיו הממשלה אינה מקור הכוח, אלא העם. שלוש המילים הראשונות של החוקה, <span class="highlight-text">"אנחנו, בני העם"</span>, היוו מהפכה מחשבתית: השלטון אינו מגיע בחסד האל או מכוח ירושה של מלכים, אלא אך ורק מהסכמת הנמשלים (Consent of the Governed). 
-                </p>
-                <p class="text-slate-300 text-lg mt-4">
-                    עיקרון זה שואב מהגותו של ג'ון לוק וקובע שהאזרחים "משאילים" חלק מזכויותיהם לממשלה כדי שתגן עליהם, אך הריבונות נשארת תמיד בידי הציבור. לכן, לעם יש את הזכות הלגיטימית לשנות את מבנה הממשל או להחליף את נציגיו באמצעות בחירות תקופתיות וחופשיות.
-                </p>
+                <p class="text-slate-300 text-lg">המילים הפותחות של החוקה, <span class="highlight-text">"We the People"</span>, הן המהפכניות ביותר בהיסטוריה המודרנית. הן קובעות שהממשלה אינה מקור הכוח, אלא העם. השלטון אינו מגיע בחסד האל או מכוח ירושה, אלא אך ורק מהסכמת הנמשלים (Consent of the Governed). האזרחים "משאילים" חלק מזכויותיהם לממשלה כדי שתגן עליהם, אך הריבונות נשארת תמיד בידי הציבור, שרשאי להחליף את נציגיו בבחירות חופשיות.</p>
             </div>
 
             <div class="constitution-point">
                 <h4 class="text-3xl font-bold text-white mb-4">2. הפרדת רשויות (Separation of Powers)</h4>
-                <p class="text-slate-300 text-lg">
-                    בהשפעת הפילוסוף הצרפתי מונטסקייה, המייסדים הבינו שריכוז של כל הכוחות בידי גוף אחד מוביל בהכרח לעריצות. החוקה מחלקת את כוח המדינה לשלוש זרועות נפרדות לחלוטין:
+                <p class="text-slate-300 text-lg">בהשפעת הפילוסוף מונטסקייה, החוקה מחלקת את הכוח לשלוש זרועות עצמאיות: 
+                    <br>• <span class="highlight-text">הרשות המחוקקת (קונגרס):</span> היחידה המוסמכת ליצור חוקים, להכריז מלחמה ולנהל את התקציב.
+                    <br>• <span class="highlight-text">הרשות המבצעת (הנשיא):</span> המפקד העליון ואחראי על אכיפת החוקים וניהול מדיניות החוץ.
+                    <br>• <span class="highlight-text">הרשות השופטת (ביהמ"ש העליון):</span> המפרשת הסופית של החוקה והמגינה על הצדק.
                 </p>
-                <ul class="list-disc list-inside text-slate-300 text-lg mt-4 space-y-2">
-                    <li><span class="highlight-text">הרשות המחוקקת (Article I):</span> הקונגרס, המורכב משני בתים, הוא היחיד המוסמך לחוקק חוקים, להכריז מלחמה ולנהל את תקציב המדינה ("כוח הארנק").</li>
-                    <li><span class="highlight-text">הרשות המבצעת (Article II):</span> הנשיא והקבינט, שתפקידם להוציא לפועל את החוקים, לנהל את הממשל הפדרלי ולפקד על הצבא ("כוח החרב").</li>
-                    <li><span class="highlight-text">הרשות השופטת (Article III):</span> בית המשפט העליון וערכאות נמוכות, המפרשים את החוק ופוסקים במקרה של סכסוכים משפטיים.</li>
-                </ul>
             </div>
 
             <div class="constitution-point">
                 <h4 class="text-3xl font-bold text-white mb-4">3. בלמים ואיזונים (Checks and Balances)</h4>
-                <p class="text-slate-300 text-lg">
-                    זהו המנגנון הדינמי שמוודא ששום רשות לא תהפוך לחזקה מדי. כפי שכתב ג'יימס מדיסון: <span class="highlight-text">"יש לתת לשאפתנות לנטרל את השאפתנות"</span>. לכל רשות יש כלים רשמיים לחסום את הרשויות האחרות: 
-                </p>
-                <p class="text-slate-300 text-lg mt-4">
-                    הנשיא יכול להטיל וטו על חוקים, אך הקונגרס יכול לבטל את הווטו ברוב של שני שלישים. הנשיא ממנה שופטים ובכירים, אך הסנאט חייב לאשר אותם ("Advice and Consent"). בית המשפט העליון יכול לפסול פעולות של הנשיא או חוקים כבלתי חוקתיים, אך הקונגרס הוא זה שקובע את מבנה בתי המשפט ויכול ליזום תיקונים לחוקה כדי לעקוף פסיקות.
-                </p>
+                <p class="text-slate-300 text-lg">המנגנון שנועד להבטיח ש"השאפתנות תנטרל את השאפתנות". כל רשות מצוידת בכלים לעצירת רשות אחרת אם זו חורגת מסמכותה. הנשיא יכול להטיל וטו, הקונגרס יכול לבטל וטו או להדיח נשיא (Impeachment), ובית המשפט יכול לפסול חוקים כבלתי חוקתיים. מערכת זו מבטיחה ששום אדם או קבוצה לא יוכלו לאחוז בכוח מוחלט.</p>
             </div>
 
             <div class="constitution-point">
                 <h4 class="text-3xl font-bold text-white mb-4">4. ממשל מוגבל (Limited Government)</h4>
-                <p class="text-slate-300 text-lg">
-                    עיקרון זה קובע שהחוקה היא לא רק המקור לכוחה של הממשלה, אלא גם הגבול שלו. הממשל הפדרלי רשאי לעשות אך ורק את מה שהותר לו במפורש במסגרת סעיפי החוקה (Enumerated Powers). 
-                </p>
-                <p class="text-slate-300 text-lg mt-4">
-                    אף אדם, כולל הנשיא, אינו מעל לחוק. הממשלה מחויבת לפעול תחת מגבלות משפטיות מחמירות כדי להגן על חירות הפרט. כל סמכות שלא הוענקה לממשלה בכתב, שייכת באופן אוטומטי למדינות או לאזרחים עצמם, מה שמבטיח שהמרחב הפרטי של האדם יישאר מוגן מפני התערבות שלטונית.
-                </p>
+                <p class="text-slate-300 text-lg">הממשלה אינה יכולה לעשות כל מה שהיא רוצה. היא מוגבלת רק לסמכויות שהוענקו לה במפורש בטקסט החוקה (Enumerated Powers). כל מה שלא נכתב במפורש כסמכות פדרלית – נשאר בידי העם או המדינות. עיקרון זה מבטיח שהפרט יישאר חופשי מפני התערבות שלטונית לא מורשית ושהחוק יהיה עליון על רצונותיהם של הפוליטיקאים.</p>
             </div>
 
             <div class="constitution-point">
                 <h4 class="text-3xl font-bold text-white mb-4">5. פדרליזם (Federalism)</h4>
-                <p class="text-slate-300 text-lg">
-                    החוקה יצרה מערכת ייחודית של חלוקת ריבונות בין הממשל המרכזי לבין המדינות. הממשל הפדרלי מטפל בנושאים לאומיים גלובליים (כמו ביטחון לאומי, הדפסת כסף וסחר חוץ), אך המדינות שומרות על כוח רב בניהול חיי היומיום.
-                </p>
-                <p class="text-slate-300 text-lg mt-4">
-                    הפדרליזם מאפשר למדינות לשמש כ"מעבדות של דמוקרטיה" – כל מדינה יכולה לנסות מדיניות חברתית או כלכלית שונה (כמו בחינוך או בבריאות). התיקון העשירי לחוקה הוא ה"עוגן" של עיקרון זה, וקובע כי סמכויות שלא הואצלו לממשל הפדרלי נשמרות למדינות או לעם, מה שמונע ריכוז כוח מוחלט בבירה אחת.
-                </p>
+                <p class="text-slate-300 text-lg">חלוקת הריבונות בין הממשל המרכזי לבין המדינות. בעוד שהממשל הפדרלי בוושינגטון מטפל בנושאים לאומיים כמו ביטחון ומטבע, המדינות (כמו וירג'יניה או ניו יורק) שומרות על כוח רב בניהול חיי היומיום, החינוך והמשטרה. הפדרליזם מאפשר למדינות לשמש כ"מעבדות של דמוקרטיה" המנסות פתרונות שונים לבעיות חברתיות.</p>
             </div>
 
             <div class="constitution-point">
                 <h4 class="text-3xl font-bold text-white mb-4">6. עליונות החוק (Supremacy Clause)</h4>
-                <p class="text-slate-300 text-lg">
-                    סעיף 6 לחוקה קובע כי החוקה וחוקי הממשל הפדרלי (שנעשו בהתאם לחוקה) הם <span class="highlight-text">"חוק המדינה העליון"</span>. עיקרון זה חיוני לקיומה של אומה מאוחדת ומונע מצב שבו כל מדינה תחליט אילו חוקים לאומיים היא מקיימת.
-                </p>
-                <p class="text-slate-300 text-lg mt-4">
-                    בכל מקרה של התנגשות בין חוק של מדינה מסוימת לבין החוקה או חוק פדרלי, החוקה תמיד גוברת. הדבר מבטיח שהזכויות והחובות הבסיסיות של האזרחים יהיו אחידות בכל רחבי ארה"ב, מהניו-אינגלנד ועד לדרום, ומחייב את כל השופטים בכל המדינות לציית בראש ובראשונה לחוק העליון.
-                </p>
+                <p class="text-slate-300 text-lg">סעיף 6 לחוקה קובע כי החוקה והחוקים הפדרליים הם <span class="highlight-text">"חוק המדינה העליון"</span>. זהו ה"דבק" המאחד את האומה; במקרה של סתירה בין חוק מדינתי לחוקה, החוקה תמיד מנצחת. הדבר מבטיח שהזכויות הבסיסיות של האזרחים יהיו אחידות ומוגנות בכל רחבי ארצות הברית.</p>
             </div>
 
             <div class="constitution-point">
                 <h4 class="text-3xl font-bold text-white mb-4">7. ביקורת שיפוטית (Judicial Review)</h4>
-                <p class="text-slate-300 text-lg">
-                    למרות שאינו מופיע במפורש בטקסט המקורי, עיקרון זה התבסס בפסק הדין ההיסטורי <span class="highlight-text">מרבורי נגד מדיסון (1803)</span>. הוא מעניק לבית המשפט העליון את הסמכות הסופית לקבוע האם חוק של הקונגרס או פעולה של הנשיא תואמים את החוקה.
-                </p>
-                <p class="text-slate-300 text-lg mt-4">
-                    אם בית המשפט מוצא סתירה, הוא מוסמך להכריז על החוק כ"בטל ומבוטל". זהו הכוח השומר על "טוהר החוקה" מפני סחף פוליטי זמני ומבטיח שהמסמך המכונן יישאר בתוקף מעל לאינטרסים של פוליטיקאים רגעיים.
-                </p>
+                <p class="text-slate-300 text-lg">הסמכות הנתונה לבית המשפט העליון לקבוע האם חוקים או פעולות ממשלתיות תואמים את ערכי החוקה. עיקרון זה, שהתקבע בפסק הדין המפורסם "מרבורי נגד מדיסון" (1803), הופך את הרשות השופטת לשומרת הסף של הדמוקרטיה המונעת מהרוב לדרוס את זכויות המיעוט המוגנות בחוקה.</p>
             </div>
 
             <div class="constitution-point">
                 <h4 class="text-3xl font-bold text-white mb-4">8. גמישות ותיקונים (Article V)</h4>
-                <p class="text-slate-300 text-lg">
-                    המייסדים הבינו שהעולם ישתנה ולכן יצרו מנגנון רשמי לעדכון החוקה. בניגוד למהפכות אלימות, החוקה מציעה דרך חוקית לשינוי עצמי. עם זאת, התהליך קשה מאוד במכוון: הוא דורש רוב של שני שלישים בשני בתי הקונגרס ואישור של שלושה רבעים מהמדינות.
-                </p>
-                <p class="text-slate-300 text-lg mt-4">
-                    הקושי הזה מבטיח שרק שינויים שנהנים מקונצנזוס לאומי רחב ועמוק יתקבלו. בזכות הגמישות הזו, החוקה הצליחה לשרוד מלחמת אזרחים, משברים כלכליים ושינויים חברתיים עצומים, ולהישאר רלוונטית גם במאה ה-21. עד היום הוכנסו רק 27 תיקונים למסמך המקורי.
-                </p>
+                <p class="text-slate-300 text-lg">המייסדים ידעו שהעולם ישתנה, ולכן יצרו דרך חוקית לעדכון החוקה ללא צורך במהפכה אלימה. התהליך קשה מאוד במכוון – דורש רוב עצום בקונגרס ובמדינות – כדי להבטיח שרק שינויים בעלי קונצנזוס לאומי רחב יתקבלו. בזכות גמישות זו, החוקה שרדה מעל 230 שנה עם 27 תיקונים בלבד.</p>
             </div>
+        </div>
+
+        <div class="structure-img-container">
+            <h4 class="text-2xl font-bold text-slate-800 mb-4">מבנה הממשל הפדרלי לפי החוקה</h4>
+            
+            <p class="text-slate-500 text-sm mt-4">חלוקת הרשויות המבטיחה בלמים ואיזונים בניהול המדינה.</p>
+        </div>
+
+        <div class="info-section">
+            <h3 class="text-3xl font-bold text-white mb-10 text-center">מגילת הזכויות (Bill of Rights) – עשרת התיקונים הראשונים</h3>
+            <p class="text-lg text-slate-300 mb-10">
+                ללא הבטחה להוסיף את מגילת הזכויות, החוקה לא הייתה מאושרת על ידי המדינות. האזרחים פחדו שהממשל החדש ירמוס את חירויות הפרט, ולכן ב-1791 נוספו 10 התיקונים שמגדירים את ה"קווים האדומים" של הממשלה:
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="amendment-card">
+                    <h5 class="text-blue-400 text-xl font-bold mb-3">תיקון ראשון:</h5>
+                    <p class="text-slate-300">הבסיס לחירות: חופש הדת, הדיבור, העיתונות, ההתקהלות והזכות להגיש קובלנה לממשלה.</p>
+                </div>
+                <div class="amendment-card">
+                    <h5 class="text-blue-400 text-xl font-bold mb-3">תיקון שני:</h5>
+                    <p class="text-slate-300">הזכות של העם לשאת נשק לצורך קיומה של מיליציה חופשית וביטחון המדינה החופשית.</p>
+                </div>
+                <div class="amendment-card">
+                    <h5 class="text-blue-400 text-xl font-bold mb-3">תיקון שלישי:</h5>
+                    <p class="text-slate-300">איסור על הממשלה להציב חיילים בבתים פרטיים ללא הסכמת הבעלים בזמן שלום.</p>
+                </div>
+                <div class="amendment-card">
+                    <h5 class="text-blue-400 text-xl font-bold mb-3">תיקון רביעי:</h5>
+                    <p class="text-slate-300">הגנה מפני חיפושים ותפיסות בלתי סבירים בנפש, בבית או ברכוש ללא צו שיפוטי מבוסס.</p>
+                </div>
+                <div class="amendment-card">
+                    <h5 class="text-blue-400 text-xl font-bold mb-3">תיקון חמישי:</h5>
+                    <p class="text-slate-300">זכות להליך הוגן, הגנה מפני הפללה עצמית ("זכות השתיקה") והגנה מפני כפל ענישה.</p>
+                </div>
+                <div class="amendment-card">
+                    <h5 class="text-blue-400 text-xl font-bold mb-3">תיקון שישי:</h5>
+                    <p class="text-slate-300">הזכות למשפט מהיר, פומבי ועל ידי חבר מושבעים ניטרלי, וזכות לייצוג על ידי עורך דין.</p>
+                </div>
+                <div class="amendment-card">
+                    <h5 class="text-blue-400 text-xl font-bold mb-3">תיקון שביעי:</h5>
+                    <p class="text-slate-300">הבטחת הזכות למשפט על ידי חבר מושבעים גם בתביעות אזרחיות שערכן עולה על 20 דולר.</p>
+                </div>
+                <div class="amendment-card">
+                    <h5 class="text-blue-400 text-xl font-bold mb-3">תיקון שמיני:</h5>
+                    <p class="text-slate-300">איסור על ערבויות מופרזות, קנסות מופרזים וענישה אכזרית ובלתי רגילה.</p>
+                </div>
+                <div class="amendment-card">
+                    <h5 class="text-blue-400 text-xl font-bold mb-3">תיקון תשיעי:</h5>
+                    <p class="text-slate-300">קובע כי פירוט זכויות מסוימות בחוקה אינו אומר שזכויות אחרות של העם נשללו או נגרעו.</p>
+                </div>
+                <div class="amendment-card">
+                    <h5 class="text-blue-400 text-xl font-bold mb-3">תיקון עשירי:</h5>
+                    <p class="text-slate-300">העוגן של הפדרליזם: כל סמכות שלא ניתנה לממשל הפדרלי שייכת למדינות או לעם.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <h3 class="text-3xl font-bold text-white mb-6">כתבי הפדרליסט (The Federalist Papers)</h3>
+            <p class="text-lg text-slate-300">
+                כדי להבטיח את אישור החוקה במדינות המפתח, כתבו אלכסנדר המילטון, ג'יימס מדיסון וג'ון ג'יי סדרה של 85 מאמרים תחת שם העט "Publius". מאמרים אלו מהווים עד היום את הפרשנות העמוקה והמוסמכת ביותר לכוונת המייסדים. הם ניתחו כל סעיף בחוקה והסבירו מדוע מבנה של שלוש רשויות עם בלמים ואיזונים הוא הדרך היחידה לשמור על חירות בתוך רפובליקה גדולה.
+            </p>
         </div>
 
     </main>
 
-    <footer class="bg-slate-950 text-slate-600 py-16 px-6 text-center border-t border-slate-900 mt-20">
-        <p class="text-blue-400 font-bold tracking-widest uppercase mb-4">Founding Fathers Heritage</p>
-        <p class="text-sm">כל הזכויות שמורות © 2026 | מבוסס על הארכיון הלאומי של ארה"ב (NARA) ומאמרי ה"פדרליסט".</p>
+    <footer class="bg-slate-950 text-slate-600 py-20 px-6 text-center border-t border-slate-900 mt-20">
+        <p class="text-blue-400 font-bold tracking-widest uppercase mb-4">The Constitution Heritage Project</p>
+        <p class="text-sm">פרויקט מחקר היסטורי | © 2026 | מבוסס על הארכיון הלאומי של ארה"ב (NARA).</p>
     </footer>
 
 </body>
