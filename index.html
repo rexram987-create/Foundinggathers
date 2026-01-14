@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>מורשת ארה"ב - דף הבית</title>
+    <title>מורשת ארה"ב - הפרויקט ההיסטורי</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
     <style>
@@ -13,7 +13,14 @@
         .nav-link { background: rgba(255, 255, 255, 0.1); padding: 0.5rem 1rem; border-radius: 0.5rem; transition: all 0.3s; text-decoration: none; color: white; border: 1px solid rgba(255, 255, 255, 0.2); }
         .nav-link:hover { background: #3b82f6; border-color: #60a5fa; }
         .nav-link.active { background: #2563eb; border-color: #3b82f6; font-weight: bold; box-shadow: 0 0 15px rgba(37, 99, 235, 0.5); }
-        .hero-section { background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), url('https://i.postimg.cc/mD7Xv1Xv/1768231941295.png'); background-size: cover; background-position: center; border-radius: 1.5rem; }
+        .hero-section { 
+            background: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.9)), url('https://images.unsplash.com/photo-1501466044931-62695aada8e9?auto=format&fit=crop&w=1600&q=80');
+            background-size: cover; 
+            background-position: center; 
+            border-radius: 1.5rem; 
+        }
+        .content-card { background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(59, 130, 246, 0.2); transition: transform 0.3s; }
+        .content-card:hover { transform: translateY(-5px); border-color: #3b82f6; }
     </style>
 </head>
 <body>
@@ -37,34 +44,71 @@
 </header>
 
 <main class="max-w-6xl mx-auto px-6 py-12">
-    <section class="hero-section text-center py-24 px-6 mb-12 shadow-2xl">
-        <h2 class="text-5xl md:text-7xl font-bold text-white mb-6">סיפורה של אומה</h2>
-        <p class="text-xl md:text-2xl text-slate-200 max-w-3xl mx-auto leading-relaxed">
-            מסע אל שורשי הדמוקרטיה המודרנית: מחזונם של האבות המייסדים, דרך עקרונות החוקה, ועד לסמלים המלווים את ארה"ב עד היום.
-        </p>
+    <section class="hero-section text-center py-20 px-8 mb-16 shadow-2xl border border-blue-500/20">
+        <h2 class="text-5xl md:text-7xl font-bold text-white mb-8">סיפורה של אומה</h2>
+        <div class="max-w-4xl mx-auto space-y-6">
+            <p class="text-xl md:text-2xl text-blue-200 font-light leading-relaxed">
+                ברוכים הבאים לפרויקט "מורשת ארה"ב" – מסע דיגיטלי מעמיק אל שורשיה של המעצמה הגדולה בעולם.
+            </p>
+            <p class="text-lg text-slate-300 leading-relaxed">
+                אתר זה הוקם במטרה להנגיש את ההיסטוריה המורכבת והמרתקת של ארצות הברית לקהל הישראלי. כאן תוכלו לחקור את הרעיונות שהציתו מהפכה, את הדמויות שהעזו לחלום על חירות, ואת המסמכים שהפכו לבסיס של הדמוקרטיה המודרנית כפי שאנו מכירים אותה היום.
+            </p>
+        </div>
     </section>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="bg-slate-800/50 p-8 rounded-2xl border border-slate-700 hover:border-blue-500 transition-all text-center">
-            <div class="text-4xl mb-4">📜</div>
-            <h3 class="text-xl font-bold mb-2 text-blue-400">החוקה</h3>
-            <p class="text-slate-400">המסמך שהניח את היסודות לממשל דמוקרטי יציב מעל ל-200 שנה.</p>
+    <section class="mb-20">
+        <h3 class="text-3xl font-bold text-white mb-10 text-center">מה מחכה לכם באתר?</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="content-card p-8 rounded-2xl">
+                <div class="text-4xl mb-4">🏛️</div>
+                <h4 class="text-xl font-bold mb-3 text-blue-400">האבות המייסדים</h4>
+                <p class="text-slate-400">היכרות עם ג'ורג' וושינגטון, תומאס ג'פרסון וחבריהם – האנשים שעיצבו אומה מתוך כאוס.</p>
+            </div>
+            <div class="content-card p-8 rounded-2xl">
+                <div class="text-4xl mb-4">📜</div>
+                <h4 class="text-xl font-bold mb-3 text-blue-400">החוקה האמריקאית</h4>
+                <p class="text-slate-400">צלילה אל תוך המסמך המכונן המגדיר את זכויות האדם והפרדת הרשויות.</p>
+            </div>
+            <div class="content-card p-8 rounded-2xl">
+                <div class="text-4xl mb-4">📅</div>
+                <h4 class="text-xl font-bold mb-3 text-blue-400">ציר זמן היסטורי</h4>
+                <p class="text-slate-400">סקירה כרונולוגית של האירועים המרכזיים – מהגעת המעפילים הראשונים ועד היום.</p>
+            </div>
+            <div class="content-card p-8 rounded-2xl">
+                <div class="text-4xl mb-4">🇺🇸</div>
+                <h4 class="text-xl font-bold mb-3 text-blue-400">הדגל והסמלים</h4>
+                <p class="text-slate-400">הסיפורים והסמליות שמאחורי ה"פסים והכוכבים" והחותם הגדול.</p>
+            </div>
+            <div class="content-card p-8 rounded-2xl">
+                <div class="text-4xl mb-4">🎶</div>
+                <h4 class="text-xl font-bold mb-3 text-blue-400">ההימנון הלאומי</h4>
+                <p class="text-slate-400">ההיסטוריה המרגשת של "דגל זרוע כוכבים" שנכתב תחת אש הקרב.</p>
+            </div>
+            <div class="content-card p-8 rounded-2xl">
+                <div class="text-4xl mb-4">☕</div>
+                <h4 class="text-xl font-bold mb-3 text-blue-400">קצת עליי</h4>
+                <p class="text-slate-400">הכירו את רם, יוצר האתר, ואת התשוקה שלו להיסטוריה, טבע וטכנולוגיה.</p>
+            </div>
         </div>
-        <div class="bg-slate-800/50 p-8 rounded-2xl border border-slate-700 hover:border-blue-500 transition-all text-center">
-            <div class="text-4xl mb-4">🏛️</div>
-            <h3 class="text-xl font-bold mb-2 text-blue-400">האבות המייסדים</h3>
-            <p class="text-slate-400">המנהיגים וההוגים שעיצבו את פניה של האומה האמריקאית.</p>
-        </div>
-        <div class="bg-slate-800/50 p-8 rounded-2xl border border-slate-700 hover:border-blue-500 transition-all text-center">
-            <div class="text-4xl mb-4">🇺🇸</div>
-            <h3 class="text-xl font-bold mb-2 text-blue-400">סמלים לאומיים</h3>
-            <p class="text-slate-400">מהדגל ועד ההמנון - המשמעות העמוקה שמאחורי הסמלים המוכרים.</p>
-        </div>
-    </div>
+    </section>
+
+    <section class="bg-blue-900/20 p-10 rounded-3xl border border-blue-500/30 text-center mb-16">
+        <h3 class="text-3xl font-bold text-white mb-6">למי האתר מיועד?</h3>
+        <p class="text-lg text-slate-300 max-w-4xl mx-auto leading-relaxed">
+            האתר נבנה כמשאב חינוכי עבור תלמידים, סטודנטים וחובבי היסטוריה. בין אם אתם מחפשים מידע לעבודה בבית הספר, מעוניינים להבין טוב יותר את הפוליטיקה האמריקאית, או פשוט אוהבים סיפורים על אומץ וחזון – הגעתם למקום הנכון.
+        </p>
+    </section>
 </main>
 
-<footer class="text-center py-10 border-t border-slate-800 mt-12">
-    <p class="text-slate-500">© 2026 פרויקט מורשת ארה"ב - נוצר על ידי רם</p>
+<footer class="text-center py-12 border-t border-slate-800 bg-slate-900/50">
+    <div class="max-w-4xl mx-auto px-6">
+        <p class="text-blue-400 font-bold mb-2">פרויקט מורשת ארה"ב</p>
+        <p class="text-slate-500 text-sm mb-4 leading-relaxed">
+            נחקר, נכתב ועוצב על ידי רם שלו. <br>
+            המידע מבוסס על מקורות היסטוריים וספריית הקונגרס.
+        </p>
+        <p class="text-slate-600 text-xs">© 2026 כל הזכויות שמורות</p>
+    </div>
 </footer>
 
 </body>
