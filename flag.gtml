@@ -26,6 +26,7 @@
                 <a href="index.html" class="nav-link">חוקת ארה"ב</a>
                 <a href="flag.html" class="nav-link active">הדגל האמריקאי</a>
                 <a href="anthem.html" class="nav-link">ההימנון הלאומי</a>
+<a href="about.html" class="nav-link">קצת עליי</a>
                 <a href="index.html" class="nav-link">ציר זמן</a>
             </nav>
         </div>
